@@ -6,8 +6,6 @@ var HomeView = function(store) {
         this.el.on('keyup', '.search-key', this.findByName);
     };
  
-    this.initialize();
-
     this.render = function() {
         this.el.html(HomeView.template());
         return this;
@@ -18,7 +16,9 @@ var HomeView = function(store) {
             $('.employee-list').html(HomeView.liTemplate(employees));
         });
     };
- 
+
+    this.initialize();
+
 }
  
 HomeView.template = Handlebars.compile($("#home-tpl").html());
