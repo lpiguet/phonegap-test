@@ -46,7 +46,7 @@ var app = {
         var match = hash.match(app.detailsURL);
         if (match) {
             this.store.findById(Number(match[1]), function(employee) {
-                self.slidePage(new EmployeeView(employee).render());
+                self.slidePage(new ResultView(employee).render());
             });
         }
     },
@@ -60,6 +60,7 @@ var app = {
         if (!this.currentPage) {
             $(page.el).attr('class', 'page stage-center');
             $('body').append(page.el);
+            $('#search-key').focus();
             this.currentPage = page;
             return;
         }
@@ -78,6 +79,7 @@ var app = {
         }
         
         $('body').append(page.el);
+        $('#search-key').focus();
         
         // Wait until the new page has been added to the DOM...
         setTimeout(function() {
@@ -91,9 +93,9 @@ var app = {
 
     initialize: function() {
         var self = this;
-        this.detailsURL = /^#employees\/(\d{1,})/;
+        this.detailsURL = /^#results\/(\d{1,})/;
         this.registerEvents();
-        this.store = new MemoryStore(function () { 
+        this.store = new WebStore(function () { 
             self.route();
         });
     }

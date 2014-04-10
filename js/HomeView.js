@@ -1,5 +1,5 @@
 var HomeView = function(store) {
- 
+
     this.initialize = function() {
         // Define a div wrapper for the view. The div wrapper is used to attach events.
         this.el = $('<div id="homePage"/>');
@@ -12,9 +12,16 @@ var HomeView = function(store) {
     };
 
     this.findByName = function() {
-        store.findByName($('.search-key').val(), function(employees) {
-            $('.employee-list').html(HomeView.liTemplate(employees));
-        });
+        var tstr = $('.search-key').val();
+        if (tstr.length > 2) {
+            store.findByName(tstr, function(data) {
+                if (data) {
+                    $('.result-list').html(HomeView.liTemplate(data));
+                } else {
+                    $('.result-list').html('No results');
+                }
+            });
+        }
     };
 
     this.initialize();
@@ -22,4 +29,4 @@ var HomeView = function(store) {
 }
  
 HomeView.template = Handlebars.compile($("#home-tpl").html());
-HomeView.liTemplate = Handlebars.compile($("#employee-li-tpl").html());
+HomeView.liTemplate = Handlebars.compile($("#result-li-tpl").html());
