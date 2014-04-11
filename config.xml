@@ -36,5 +36,7 @@
     <icon gap:platform="ios" height="144" src="res/icon/ios/icon-144.png" width="144" />
 
     <gap:platform name="android" />
+
+    <access origin="*" />
  
 </widget>
