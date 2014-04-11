@@ -45,7 +45,9 @@ var app = {
         }
         var match = hash.match(app.detailsURL);
         if (match) {
-            this.store.findById(Number(match[1]), function(employee) {
+            var pidstr = $('#pid').val();
+
+            this.store.findById(Number(match[1]), Number(pidstr), function(employee) {
                 self.slidePage(new ResultView(employee).render());
             });
         }

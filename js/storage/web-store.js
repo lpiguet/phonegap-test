@@ -12,10 +12,10 @@ var WebStore = function(successCallback, errorCallback) {
         }
     }
 
-    this.findByName = function(searchKey, callback) {
+    this.findByName = function(searchKey, pid, callback) {
 
         $.getJSON(
-            this.backend+'/search/getdata/query/'+searchKey+'.json',
+            this.backend+'/search/getdata/query/'+pid+'/'+searchKey+'.json',
             function (res) {
                 if (res) {
                     console.log ('getdata/query: Result: '+ res.length + ' items');
@@ -25,10 +25,10 @@ var WebStore = function(successCallback, errorCallback) {
         );
     };
 
-    this.findById = function(id, callback) {
+    this.findById = function(id, pid, callback) {
 
         $.getJSON(
-            this.backend+'/search/getdata/id/'+id+'.json',
+            this.backend+'/search/getdata/id/'+pid+'/'+id+'.json',
             function (res) {
                 if (res) {
                     console.log ('getdata/id: Result: '+ res.length + ' items');

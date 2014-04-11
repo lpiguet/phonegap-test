@@ -15,11 +15,8 @@ body {
 
 .header {
     background: #666;
-    -webkit-background-size: 1px 44px;
-    -moz-background-size: 1px 44px;
-    -ms-background-size: 1px 44px;
-    -o-background-size: 1px 44px;
-    background-size: 1px 44px;
+    background-image:url('../img/eks_pattern.jpg');
+    background-size:cover;
     height: 44px;
     line-height: 44px;
     width: 100%;
@@ -31,21 +28,40 @@ body {
 
 .header h1 {
     padding: 0;
-    text-align: center;
     font-size: 20px;
-    margin: 0;
+    margin: 0 0 0 5px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;
+    display:inline;
+}
+
+.logo {
+  width:50%;
+  max-width:230px;
+  height:100px;
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  background-image:url('../img/eks_logo.jpg');
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position: right bottom;
+  z-index:-2000;
+  opacity:0.3;
+}
+
+.header select {
+    margin: 10px;
+    float:right;
 }
 
 .header-button {
-    position: absolute;
-    top: 6;
-    padding: 7px 5px;
+    margin: 5px;
+    padding: 5px 5px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     line-height: 1em;
 }
@@ -74,6 +90,7 @@ input[type="search"] {
 	box-shadow: inset 0 2px 2px rgba(0,0,0,.5), 0 1px #fff;
 	background: #eee;
     -webkit-appearance:none;
+
 }
 
 input[type="search"]:focus {
@@ -229,3 +246,11 @@ li>a.tappable-active {
     -webkit-transition-duration: .375s;
     -o-transition-duration: .375s;
 }
+
+div.record .text { color:#251b3e; }
+div.record .details, .result-list .details { font-size:0.8em; white-space:pre-wrap; color:#033653; }
+div.record table.fields { width:100%; margin:0px; }
+div.record table.fields td { width:50%; vertical-align:top;}
+div.record div.field { padding:2px; background-color:#bfd2d7; clear:left; margin:2px 0px;border-radius:3px; }
+div.field div { display:inline; margin-right:4px; font-size:0.8em; }
+div.field div.field_label { font-weight:bold; }

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>EPS Search</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <script src="css/source-sans-pro.js"></script>
   <link href="css/styles.css" rel="stylesheet">
@@ -9,34 +10,81 @@
 <body>
 
 <script id="home-tpl" type="text/x-handlebars-template">
-    <div class='header'><h1>EPS Search</h1></div>
-    <div class='search-bar'><input id='search-key' class='search-key' type="search"/></div>
+    <div class='header'><h1>EPS Search</h1>
+      <select id='pid' name="pid">
+        <option value="239">K2022 Terminology</option>
+        <option value="242">K2022 AF Issues and Feedback</option>
+      </select>
+    </div>
+    <div class="logo"></div>
+    <div class='search-bar'>
+      <input id='search-key' class='search-key' type="search"/>
+    </div>
     <div class="scroll"><ul class='result-list'></ul></div>
 </script>
 
 <script id="result-li-tpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#results/{{this.id}}">{{this.text}}<br/>{{this.details}}</a></li>
+    <li><a href="#results/{{this.id}}"><div class="text">{{this.text}}</div><div class="details">{{this.details}}</div></a></li>
     {{/.}}
 </script>
 
 <script id="result-tpl" type="text/x-handlebars-template">
-    <div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>Details</h1></div>
+    <div class='header'><a href='#' class="button header-button header-button-left">&laquo;&nbsp;Back</a><h1>Details</h1></div>
+    <div class="logo"></div>
     {{#.}}
-    <div class='details'>
-        <h1>{{text}}</h1>
-        {{#if details}}<h2>{{details}}</h2>{{/if}}
-        <ul>
-            {{#if code}}<li>Code:&nbsp;{{code}}</li>{{/if}}
-            {{#if custom1}}<li>Custom1:&nbsp;{{custom1}}</li>{{/if}}
-            {{#if custom2}}<li>Custom2:&nbsp;{{custom2}}</li>{{/if}}
-            {{#if custom3}}<li>Custom3:&nbsp;{{custom3}}</li>{{/if}}
-        </ul>
+    <div class="record">
+        <table class="fields">
+          <tr>
+            <td colspan="2">
+              <div class="text">{{text}}</div>
+            </td>
+          </tr>
+          {{#if details}}
+          <tr>
+            <td colspan="2">
+              <div class="details">{{details}}</div>
+            </td>
+          </tr>
+          {{/if}}
+
+          <tr>
+            <td>
+              {{#if id}}<div class="field"><div class="field_label">Id:</div><div class="field_value">{{id}}</div></div>{{/if}}
+
+              {{#if rating}}<div class="field"><div class="field_label">#:</div><div class="field_value">{{rating}}</div></div>{{/if}}
+              {{#if status}}<div class="field"><div class="field_label">Status:</div><div class="field_value">{{status}}</div></div>{{/if}}
+
+              {{#if code}}<div class="field"><div class="field_label">Code:</div><div class="field_value">{{code}}</div></div>{{/if}}
+              {{#if date_raised}}<div class="field"><div class="field_label">Raised:</div><div class="field_value">{{date_raised}}</div></div>{{/if}}
+              {{#if date_start}}<div class="field"><div class="field_label">Start:</div><div class="field_value">{{date_start}}</div></div>{{/if}}
+              {{#if date_due}}<div class="field"><div class="field_label">End/Due:</div><div class="field_value">{{date_due}}</div></div>{{/if}}
+              {{#if date_completed}}<div class="field"><div class="field_label">Completed:</div><div class="field_value">{{date_completed}}</div></div>{{/if}}
+
+
+              {{#if assigned_to}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{assigned_to}}</div></div>{{/if}}
+              {{#if owned_by}}<div class="field"><div class="field_label">Owned:</div><div class="field_value">{{owned_by}}</div></div>{{/if}}
+              {{#if raised_by}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{raised_by}}</div></div>{{/if}}
+            </td>
+            <td>
+              {{#if custom1}}<div class="field"><div class="field_label">Custom1:</div><div class="field_value">{{custom1}}</div></div>{{/if}}
+              {{#if custom2}}<div class="field"><div class="field_label">Custom2:</div><div class="field_value">{{custom2}}</div></div>{{/if}}
+              {{#if custom3}}<div class="field"><div class="field_label">Custom3:</div><div class="field_value">{{custom3}}</div></div>{{/if}}
+              {{#if custom4}}<div class="field"><div class="field_label">Custom4:</div><div class="field_value">{{custom4}}</div></div>{{/if}}
+              {{#if custom5}}<div class="field"><div class="field_label">Custom5:</div><div class="field_value">{{custom5}}</div></div>{{/if}}
+
+            </td>
+          </tr>
+        </table>
     </div>
     {{/.}}
 </script>
 
-<!--<script src="phonegap.js"></script>-->
+<script id="field-template" type="text/x-handlebars-template">
+
+</script>
+
+<script src="phonegap.js"></script>
 <script src="lib/handlebars.js"></script>
 <script src="lib/jquery-1.8.2.min.js"></script>
 <script src="js/storage/web-store.js"></script>
