@@ -1,6 +1,6 @@
 var WebStore = function(successCallback, errorCallback) {
 
-    this.backend = 'http://mobile.eks.com/eps_search';
+    this.backend = 'https://mobile.eks.com/eps_search';
 
     // Used to simulate async calls. This is done to provide a consistent interface with stores (like WebSqlStore)
     // that use async data access APIs
