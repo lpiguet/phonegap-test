@@ -9,6 +9,8 @@ var ResultView = function (data) {
         return this;
     };
 
+    this.bindEvents = function () { };
+
     this.initialize();
 }
 

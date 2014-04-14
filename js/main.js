@@ -33,13 +33,20 @@ var app = {
         $(window).on('hashchange', $.proxy(this.route, this));
     },
 
-    route: function() {
+    route: function(store) {
         var self = this;
+
+        if (!this.auth.getTicket()) {
+            this.slidePage(this.auth.drawLogin());
+            return;
+        }
+
         var hash = window.location.hash;
         if (!hash) {
             if (!this.homePage) {
-                this.homePage = new HomeView (this.store).render();
+                this.homePage = new HomeView(this.store).render();
             }
+
             this.slidePage(this.homePage);
             return;
         }
@@ -47,8 +54,8 @@ var app = {
         if (match) {
             var pidstr = $('#pid').val();
 
-            this.store.findById(Number(match[1]), Number(pidstr), function(employee) {
-                self.slidePage(new ResultView(employee).render());
+            this.store.findById(Number(match[1]), Number(pidstr), function(data) {
+                self.slidePage(new ResultView(data).render());
             });
         }
     },
@@ -64,6 +71,7 @@ var app = {
             $('body').append(page.el);
             $('#search-key').focus();
             this.currentPage = page;
+            page.bindEvents();
             return;
         }
         
@@ -96,8 +104,11 @@ var app = {
     initialize: function() {
         var self = this;
         this.detailsURL = /^#results\/(\d{1,})/;
+        this.backend = 'http://local-appstage.eks.com/eps';
+
         this.registerEvents();
-        this.store = new WebStore(function () { 
+        this.auth = new Auth (this.backend);
+        this.store = new WebStore(this.backend, this.auth, function () { 
             self.route();
         });
     }

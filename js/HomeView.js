@@ -12,6 +12,8 @@ var HomeView = function(store) {
         return this;
     };
 
+    this.bindEvents = function () { };
+
     this.findByName = function() {
         var tstr = $('.search-key').val();
         var pidstr = $('#pid').val();

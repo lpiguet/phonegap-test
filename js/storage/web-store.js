@@ -1,6 +1,4 @@
-var WebStore = function(successCallback, errorCallback) {
-
-    this.backend = 'https://mobile.eks.com/eps_search';
+var WebStore = function(backend, ticket, successCallback, errorCallback) {
 
     // Used to simulate async calls. This is done to provide a consistent interface with stores (like WebSqlStore)
     // that use async data access APIs
@@ -15,7 +13,7 @@ var WebStore = function(successCallback, errorCallback) {
     this.findByName = function(searchKey, pid, callback) {
 
         $.getJSON(
-            this.backend+'/search/getdata/query/'+pid+'/'+searchKey+'.json',
+            this.backend+'/mobile/getdata/query/'+pid+'/'+searchKey+'.json',
             function (res) {
                 if (res) {
                     console.log ('getdata/query: Result: '+ res.length + ' items');
@@ -28,7 +26,7 @@ var WebStore = function(successCallback, errorCallback) {
     this.findById = function(id, pid, callback) {
 
         $.getJSON(
-            this.backend+'/search/getdata/id/'+pid+'/'+id+'.json',
+            this.backend+'/mobile/getdata/id/'+pid+'/'+id+'.json',
             function (res) {
                 if (res) {
                     console.log ('getdata/id: Result: '+ res.length + ' items');
@@ -37,6 +35,6 @@ var WebStore = function(successCallback, errorCallback) {
             }
         );
     };
-
+    this.backend = backend;
     callLater(successCallback);
 }
