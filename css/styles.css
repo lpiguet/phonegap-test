@@ -287,3 +287,7 @@ div.record table.fields td { width:50%; vertical-align:top;}
 div.record div.field { padding:2px; background-color:#bfd2d7; clear:left; margin:2px 0px;border-radius:3px; }
 div.field div { display:inline; margin-right:4px; font-size:0.8em; }
 div.field div.field_label { font-weight:bold; }
+
+fieldset {
+  border-radius:6px;
+}
