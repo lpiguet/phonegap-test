@@ -1,9 +1,27 @@
+@font-face{ 
+    font-family: 'FiraSansRegular';
+    font-weight:normal;
+    src: url('FiraSans/FiraSans-Regular.woff') format('woff');
+}
+
+@font-face{ 
+    font-family: 'FiraSansLight';
+    font-weight:normal;
+    src: url('FiraSans/FiraSans-Light.woff') format('woff');
+}
+
+@font-face{ 
+    font-family: 'FiraSansMedium';
+    font-weight:normal;
+    src: url('FiraSans/FiraSans-Medium.woff') format('woff');
+}
+
 html {
     height: 100%;
 }
 
 body {
-    font-family: source-sans-pro, serif;
+    font-family: FiraSansRegular, sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
@@ -11,6 +29,10 @@ body {
     background-color: #fff;
     overflow: hidden;
     position: relative;
+}
+
+input {
+    font-family: FiraSansRegular, sans-serif;
 }
 
 .header {
@@ -28,6 +50,8 @@ body {
 
 .header h1 {
     padding: 0;
+    font-family:FiraSansMedium;
+    font-weight:normal;
     font-size: 20px;
     margin: 0 0 0 5px;
     white-space: nowrap;
@@ -247,8 +271,12 @@ li>a.tappable-active {
     -o-transition-duration: .375s;
 }
 
-div.record .text { color:#251b3e; }
-div.record .details, .result-list .details { font-size:0.8em; white-space:pre-wrap; color:#033653; }
+h1, select#pid {
+max-width:49%;
+}
+
+div.record .text, .result-list .text { color:#251b3e;}
+div.record .details, .result-list .details { font-family:FiraSansLight;font-size:0.8em; white-space:pre-wrap; color:#033653; }
 div.record table.fields { width:100%; margin:0px; }
 div.record table.fields td { width:50%; vertical-align:top;}
 div.record div.field { padding:2px; background-color:#bfd2d7; clear:left; margin:2px 0px;border-radius:3px; }
