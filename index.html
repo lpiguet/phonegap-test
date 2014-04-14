@@ -6,15 +6,19 @@
   <meta name="viewport" content="width=device-width, user-scalable=no" />
 
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/foundation-icons/foundation-icons.css">
 </head>
 <body>
 
 <script id="home-tpl" type="text/x-handlebars-template">
-    <div class='header'><h1>EPS Search</h1>
-      <select id='pid' name="pid">
+    <div class='header'>
+      <h1>EPS Search</h1>
+      <a href="#" class="button" id="logout"><i class="fi-power"></i></a>
+      <select id='pid' class="right" name="pid">
         <option value="239">K2022 Terminology</option>
         <option value="242">K2022 AF Issues and Feedback</option>
       </select>
+
     </div>
     <div class="logo"></div>
     <div class='search-bar'>
@@ -38,7 +42,7 @@
 </script>
 
 <script id="result-tpl" type="text/x-handlebars-template">
-    <div class='header'><a href='#' class="button header-button header-button-left">&laquo;&nbsp;Back</a><h1>Details</h1></div>
+    <div class='header'><a href='#' class="button button-border"><i class="fi-arrow-left"></i></a><h1>Details</h1></div>
     <div class="logo"></div>
     {{#.}}
     <div class="record">
@@ -86,10 +90,6 @@
         </table>
     </div>
     {{/.}}
-</script>
-
-<script id="field-template" type="text/x-handlebars-template">
-
 </script>
 
 <script src="phonegap.js"></script>

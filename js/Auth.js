@@ -19,6 +19,11 @@ var Auth = function (backend) {
         }
     }
 
+    this.logout = function () {
+        localStorage.removeItem ('ticket');
+        location.reload(); // reload the page
+    }
+
     this.drawLogin = function () {
 
         var uuid;
@@ -44,10 +49,10 @@ var Auth = function (backend) {
         txt += '<input type="hidden" value="'+name+'" name="data[Device][name]" />';
         txt += '<input type="hidden" value="'+platform+'" name="data[Device][platform]" />';
         txt += '<input type="hidden" value="'+version+'" name="data[Device][version]" /></div>';
-        txt += '<fieldset><legend>Please enter your username and password</legend>';
+        txt += '<div id="login-form"><fieldset><legend>Please enter your username and password</legend>';
         txt += '<div class="form-field required"><label for="UserUsername">Username</label><input type="text" required="required" id="UserUsername" maxlength="100" class="input-text medium input-text" name="data[User][username]"></div><div class="form-field required"><label for="UserPassword">Password</label><input type="password" required="required" id="UserPassword" class="input-text medium input-text" name="data[User][password]"></div>';
         //    txt += '<div class="submit"><button>Submit</button></div></form></div>';
-        txt += '<div class="go"><button class="small button">Submit</button></div></fieldset></form></div>';
+        txt += '<div class="go"><button class="small button">Submit</button></div></fieldset></form></div></div>';
 
         this.el = $('<div id="login-div"/>');
         this.el.html(Auth.template());
@@ -56,6 +61,8 @@ var Auth = function (backend) {
     }
 
     this.bindEvents = function () {
+
+        $('#UserUsername').focus();
 
         //callback handler for form submit
         $("#UserLoginForm").submit(function(e) {

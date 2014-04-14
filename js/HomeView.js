@@ -1,10 +1,15 @@
-var HomeView = function(store) {
+var HomeView = function(app) {
 
     this.initialize = function() {
         // Define a div wrapper for the view. The div wrapper is used to attach events.
         this.el = $('<div id="homePage"/>');
         this.el.on('keyup', '.search-key', this.findByName);
         this.el.on('change', '#pid', this.findByName);
+
+        this.el.on('click', '#logout', function (event) {
+            $.proxy(app.auth.logout(), this);
+        });
+
     };
  
     this.render = function() {
@@ -18,7 +23,7 @@ var HomeView = function(store) {
         var tstr = $('.search-key').val();
         var pidstr = $('#pid').val();
         if (tstr.length > 2) {
-            store.findByName(tstr, pidstr, function(data) {
+            app.store.findByName(tstr, pidstr, function(data) {
                 if (data) {
                     $('.result-list').html(HomeView.liTemplate(data));
                 } else {

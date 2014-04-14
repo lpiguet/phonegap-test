@@ -31,6 +31,7 @@ var app = {
             });
         }
         $(window).on('hashchange', $.proxy(this.route, this));
+
     },
 
     route: function(store) {
@@ -44,7 +45,7 @@ var app = {
         var hash = window.location.hash;
         if (!hash) {
             if (!this.homePage) {
-                this.homePage = new HomeView(this.store).render();
+                this.homePage = new HomeView(this).render();
             }
 
             this.slidePage(this.homePage);
