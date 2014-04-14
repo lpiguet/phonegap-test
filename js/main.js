@@ -105,7 +105,7 @@ var app = {
     initialize: function() {
         var self = this;
         this.detailsURL = /^#results\/(\d{1,})/;
-        this.backend = 'http://local-appstage.eks.com/eps';
+        this.backend = 'https://appstage.eks.com/eps';
 
         this.registerEvents();
         this.auth = new Auth (this.backend);
