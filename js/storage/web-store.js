@@ -11,11 +11,16 @@ var WebStore = function(backend, ticket, successCallback, errorCallback) {
     }
 
     this.findByName = function(searchKey, pid, callback) {
-
+        var ticket = localStorage.getItem('ticket');
+        console.log ('Ticket: '+ticket);
         $.getJSON(
-            this.backend+'/mobile/getdata/query/'+pid+'/'+searchKey+'.json',
+            this.backend+'/mobile/getdata/query/'+pid+'/'+searchKey+'.json?ticket='+ticket,
             function (res) {
                 if (res) {
+                    if (res.status == 'ERROR-AUTH') {
+                        localStorage.removeItem ('ticket');
+                        location.reload(); // reload the page
+                    }
                     console.log ('getdata/query: Result: '+ res.length + ' items');
                 }
                 callLater (callback, res);
@@ -25,8 +30,10 @@ var WebStore = function(backend, ticket, successCallback, errorCallback) {
 
     this.findById = function(id, pid, callback) {
 
+        var ticket = localStorage.getItem('ticket');
+
         $.getJSON(
-            this.backend+'/mobile/getdata/id/'+pid+'/'+id+'.json',
+            this.backend+'/mobile/getdata/id/'+pid+'/'+id+'.json?ticket='+ticket,
             function (res) {
                 if (res) {
                     console.log ('getdata/id: Result: '+ res.length + ' items');

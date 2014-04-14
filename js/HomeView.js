@@ -25,6 +25,8 @@ var HomeView = function(store) {
                     $('.result-list').html('No results');
                 }
             });
+        } else {
+            $('.result-list').html('');
         }
     };
 

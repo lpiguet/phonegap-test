@@ -37,7 +37,7 @@ var Auth = function (backend) {
             version = device.version;
         }
 
-        var txt = '<div class="row user form"><form accept-charset="utf-8" method="post" id="UserLoginForm" class="nice" action="';
+        var txt = '<div class="row user form"><div id="login-error"></div><form accept-charset="utf-8" method="post" id="UserLoginForm" class="nice" action="';
         txt += this.backend+'/mobile/authenticate"><div style="display:none;">';
         txt += '<input type="hidden" value="POST" name="_method">';
         txt += '<input type="hidden" value="'+uuid+'" name="data[Device][uuid]" />';
@@ -70,10 +70,17 @@ var Auth = function (backend) {
                 success:function(data, textStatus, jqXHR) {
                     //data: return data from server
                     console.log ('Success: received: ' + data);
-                    localStorage.setItem ('ticket', data);
-                    console.log ('Success: stored: ' + localStorage.getItem ('ticket'));
-                    location.reload(); // reload the page
-                    $("#login-div").empty();
+                    var result = jQuery.parseJSON (data);
+                    if (result && result.status == 'OK') {
+                        localStorage.setItem ('ticket', result.ticket);
+                        console.log ('Success: stored: ' + localStorage.getItem ('ticket'));
+                        $("#login-div").empty();
+                        location.reload(); // reload the page
+                    } else {
+                        $('#login-error').html (result.message);
+                        $('#UserPassword').val('');
+                        console.log ('Login Error: ' + result.message);
+                    }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     //if fails     
