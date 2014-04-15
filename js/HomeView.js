@@ -17,7 +17,12 @@ var HomeView = function(app) {
         return this;
     };
 
-    this.bindEvents = function () { };
+    this.bindEvents = function () { 
+        var current_pid = localStorage.getItem ('pid');
+        if (current_pid) {
+            $('#pid option[value="'+current_pid+'"]').attr("selected", true);
+        }
+    };
 
     this.autocomplete = function () {
         if (mytimeout) { window.clearTimeout(mytimeout); }

@@ -9,12 +9,12 @@ var Auth = function (backend) {
     this.getTicket = function () {
 
         var ticket = localStorage.getItem ('ticket');
-        console.log ('Checked ticket:'+ticket);
+//        console.log ('Checked ticket:'+ticket);
         if (ticket) {
-            console.log ('Auth: success');
+//            console.log ('Auth: success');
             return true;
         } else {
-            console.log ('Auth: no ticket');
+//            console.log ('Auth: no ticket');
             return false;
         }
     }

@@ -12,6 +12,7 @@ var WebStore = function(backend, ticket, successCallback, errorCallback) {
 
     this.findByName = function(searchKey, pid, callback) {
         var ticket = localStorage.getItem('ticket');
+        localStorage.setItem('pid', pid);
 //        console.log ('Ticket: '+ticket);
         $.getJSON(
             this.backend+'/mobile/getdata/query/'+pid+'/'+searchKey+'.json?ticket='+ticket,
@@ -20,10 +21,12 @@ var WebStore = function(backend, ticket, successCallback, errorCallback) {
                     if (res.status == 'ERROR-AUTH') {
                         localStorage.removeItem ('ticket');
                         location.reload(); // reload the page
+                    } else if (res.status == 'ERROR') {
+                        app.showAlert (res.message);
+                    } else {
+                        callLater (callback, res);
                     }
-//                    console.log ('getdata/query: Result: '+ res.length + ' items');
                 }
-                callLater (callback, res);
             }
         );
     };
