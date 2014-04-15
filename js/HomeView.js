@@ -1,9 +1,9 @@
 var HomeView = function(app) {
-
+    var mytimeout = null;
     this.initialize = function() {
         // Define a div wrapper for the view. The div wrapper is used to attach events.
         this.el = $('<div id="homePage"/>');
-        this.el.on('keyup', '.search-key', this.findByName);
+        this.el.on('keyup', '.search-key', $.proxy(function() { this.autocomplete(); }, this));
         this.el.on('change', '#pid', this.findByName);
 
         this.el.on('click', '#logout', function (event) {
@@ -18,6 +18,11 @@ var HomeView = function(app) {
     };
 
     this.bindEvents = function () { };
+
+    this.autocomplete = function () {
+        if (mytimeout) { window.clearTimeout(mytimeout); }
+        mytimeout = window.setTimeout($.proxy (function() { this.findByName()}, this), 600);
+    }
 
     this.findByName = function() {
         var tstr = $('.search-key').val();

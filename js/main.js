@@ -105,7 +105,12 @@ var app = {
     initialize: function() {
         var self = this;
         this.detailsURL = /^#results\/(\d{1,})/;
-        this.backend = 'https://appstage.eks.com/eps';
+
+        if (window.location.hostname == 'local-appstage.eks.com') {
+            this.backend = 'http://local-appstage.eks.com/eps'; // local version
+        } else {
+            this.backend = 'https://appstage.eks.com/eps'; // deployed version
+        }
 
         this.registerEvents();
         this.auth = new Auth (this.backend);

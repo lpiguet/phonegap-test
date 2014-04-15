@@ -291,3 +291,18 @@ div.field div.field_label { font-weight:bold; }
 fieldset {
   border-radius:6px;
 }
+
+#loading {
+    position:absolute;
+    height:31px;
+    width:31px;
+    background-image: url('../img/loading.gif');
+
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    z-index:9000;
+
+}
