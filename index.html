@@ -41,7 +41,7 @@
 
 <script id="result-li-tpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#results/{{this.id}}"><div class="text">{{this.text}}</div><div class="details">{{ellipsis this.details 200 "&hellip;"}}</div></a></li>
+    <li><a href="#results/{{this.id}}"><div class="project">{{this.project}}</div><div class="text">{{this.text}}</div><div class="details">{{ellipsis this.details 200 "&hellip;"}}</div></a></li>
     {{/.}}
 </script>
 
@@ -53,17 +53,13 @@
         <table class="fields">
           <tr>
             <td colspan="2">
+              <div class="project">{{project}}</div>
               <div class="text">{{text}}</div>
-            </td>
-          </tr>
           {{#if details}}
-          <tr>
-            <td colspan="2">
               <div class="details">{{details}}</div>
+          {{/if}}
             </td>
           </tr>
-          {{/if}}
-
           <tr>
             <td>
               {{#if id}}<div class="field"><div class="field_label">Id:</div><div class="field_value">{{id}}</div></div>{{/if}}

@@ -281,12 +281,16 @@ label {
 }
 
 div.record .text, .result-list .text { color:#251b3e;}
-div.record .details, .result-list .details { font-family:FiraSansRegular;font-size:0.8em; white-space:pre-wrap; color:#0b677c; }
+div.record .project, .result-list .project { font-size:0.8em; color:#999;}
+div.record .details, .result-list .details { font-size:0.8em; white-space:pre-wrap; color:#0b677c; }
 div.record table.fields { width:100%; margin:0px; }
 div.record table.fields td { width:50%; vertical-align:top;}
+.record td { padding:6px; }
 div.record div.field { padding:2px; background-color:#bfd2d7; clear:left; margin:2px 0px;border-radius:3px; }
 div.field div { display:inline; margin-right:4px; font-size:0.8em; }
 div.field div.field_label { font-weight:bold; }
+
+ul.result-list li { padding: 2px 6px; }
 
 fieldset {
   border-radius:6px;

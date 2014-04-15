@@ -24,7 +24,7 @@ var HomeView = function(app) {
             var projects = jQuery.parseJSON (projectsStr);
             if (projects) {
                 var options = HomeView.projectOptionsTemplate(projects);
-                $('#pid').html(options);
+                $('#pid').html('<option value="0">All</option>'+options);
                 // Set current project
                 var current_pid = localStorage.getItem ('pid');
                 if (current_pid) {
