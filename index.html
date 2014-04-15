@@ -15,8 +15,6 @@
       <h1>EPS Search</h1>
       <a href="#" class="button" id="logout"><i class="fi-power"></i></a>
       <select id='pid' class="right" name="pid">
-        <option value="239">K2022 Terminology</option>
-        <option value="242">K2022 AF Issues and Feedback</option>
       </select>
 
     </div>
@@ -25,6 +23,12 @@
       <input id='search-key' class='search-key' type="search"/>
     </div>
     <div class="scroll"><ul class='result-list'></ul></div>
+</script>
+
+<script id="project-options-tpl" type="text/x-handlebars-template">
+    {{#.}}
+    <option value="{{this.id}}">{{this.name}}</option>
+    {{/.}}
 </script>
 
 <script id="auth-tpl" type="text/x-handlebars-template">

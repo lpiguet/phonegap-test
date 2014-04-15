@@ -80,6 +80,7 @@ var Auth = function (backend) {
                     var result = jQuery.parseJSON (data);
                     if (result && result.status == 'OK') {
                         localStorage.setItem ('ticket', result.ticket);
+                        localStorage.setItem ('projects', JSON.stringify (result.projects));
                         console.log ('Success: stored: ' + localStorage.getItem ('ticket'));
                         $("#login-div").empty();
                         location.reload(); // reload the page
@@ -103,3 +104,4 @@ var Auth = function (backend) {
 }
 
 Auth.template = Handlebars.compile($("#auth-tpl").html());
+

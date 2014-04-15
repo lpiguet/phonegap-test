@@ -17,16 +17,13 @@ var WebStore = function(backend, ticket, successCallback, errorCallback) {
         $.getJSON(
             this.backend+'/mobile/getdata/query/'+pid+'/'+searchKey+'.json?ticket='+ticket,
             function (res) {
-                if (res) {
-                    if (res.status == 'ERROR-AUTH') {
-                        localStorage.removeItem ('ticket');
-                        location.reload(); // reload the page
-                    } else if (res.status == 'ERROR') {
-                        app.showAlert (res.message);
-                    } else {
-                        callLater (callback, res);
-                    }
+                if (res && res.status == 'ERROR-AUTH') {
+                    localStorage.removeItem ('ticket');
+                    location.reload(); // reload the page
+                } else if (res && res.status == 'ERROR') {
+                    app.showAlert (res.message);
                 }
+                callLater (callback, res);
             }
         );
     };

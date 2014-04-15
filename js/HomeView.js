@@ -18,9 +18,19 @@ var HomeView = function(app) {
     };
 
     this.bindEvents = function () { 
-        var current_pid = localStorage.getItem ('pid');
-        if (current_pid) {
-            $('#pid option[value="'+current_pid+'"]').attr("selected", true);
+        // Populate projects menu
+        var projectsStr = localStorage.getItem ('projects');
+        if (projectsStr) {
+            var projects = jQuery.parseJSON (projectsStr);
+            if (projects) {
+                var options = HomeView.projectOptionsTemplate(projects);
+                $('#pid').html(options);
+                // Set current project
+                var current_pid = localStorage.getItem ('pid');
+                if (current_pid) {
+                    $('#pid option[value="'+current_pid+'"]').attr("selected", true);
+                }
+            }
         }
     };
 
@@ -37,7 +47,7 @@ var HomeView = function(app) {
                 if (data) {
                     $('.result-list').html(HomeView.liTemplate(data));
                 } else {
-                    $('.result-list').html('No results');
+                    $('.result-list').html('<li>No results</li>');
                 }
             });
         } else {
@@ -51,3 +61,4 @@ var HomeView = function(app) {
  
 HomeView.template = Handlebars.compile($("#home-tpl").html());
 HomeView.liTemplate = Handlebars.compile($("#result-li-tpl").html());
+HomeView.projectOptionsTemplate = Handlebars.compile($("#project-options-tpl").html());
