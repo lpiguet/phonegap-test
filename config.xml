@@ -47,6 +47,7 @@
 
 
     <gap:platform name="android" />
+    <gap:platform name="ios" />
 
     <access origin="*" />
  
