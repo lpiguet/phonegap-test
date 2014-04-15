@@ -87,6 +87,7 @@ var app = {
             // Always apply a Back transition (slide from left) when we go back to the search page
             $(page.el).attr('class', 'page stage-left');
             currentPageDest = "stage-right";
+
         } else {
             // Forward transition (slide from right)
             $(page.el).attr('class', 'page stage-right');
@@ -94,7 +95,6 @@ var app = {
         }
         
         $('body').append(page.el);
-        $('#search-key').focus();
         
         // Wait until the new page has been added to the DOM...
         setTimeout(function() {
@@ -103,6 +103,12 @@ var app = {
             // Slide in the new page
             $(page.el).attr('class', 'page stage-center transition');
             self.currentPage = page;
+
+            if (page == app.homePage) {
+                $('#search-key').focus();
+            } else {
+                $('#search-key').blur();
+            }
         });
     },
 

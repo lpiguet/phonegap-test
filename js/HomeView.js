@@ -21,7 +21,7 @@ var HomeView = function(app) {
 
     this.autocomplete = function () {
         if (mytimeout) { window.clearTimeout(mytimeout); }
-        mytimeout = window.setTimeout($.proxy (function() { this.findByName()}, this), 600);
+        mytimeout = window.setTimeout($.proxy (function() { this.findByName()}, this), 500);
     }
 
     this.findByName = function() {
