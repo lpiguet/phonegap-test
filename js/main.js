@@ -11,6 +11,7 @@ var app = {
     registerEvents: function() {
         var self = this;
 
+/*
         // Check of browser supports touch events...
         if (document.documentElement.hasOwnProperty('ontouchstart')) {
             console.log ('ontouchstart');
@@ -21,8 +22,7 @@ var app = {
             $('body').on('touchend', 'a', function(event) {
                 $(event.target).removeClass('tappable-active');
             });
-        }
-/*
+
         } else {
             console.log ('onmousedown');
             // ... if not: register mouse events instead
