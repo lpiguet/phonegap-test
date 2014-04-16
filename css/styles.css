@@ -280,8 +280,9 @@ label {
   font-size:100%;
 }
 
-div.record .text, .result-list .text { color:#251b3e;}
-div.record .project, .result-list .project { font-size:0.8em; color:#999;}
+div.record .project, .result-list .project { font-size:0.8em; color:#999; margin-bottom:3px;}
+div.record .text, .result-list .text { color:#251b3e;  margin-bottom:3px;}
+
 div.record .details, .result-list .details { font-size:0.8em; white-space:pre-wrap; color:#0b677c; }
 div.record table.fields { width:100%; margin:0px; }
 div.record table.fields td { width:50%; vertical-align:top;}

@@ -40,12 +40,13 @@ var app = {
 
     onDeviceReady: function() {
         if (typeof device !== 'undefined') {
-//            this.showAlert ("[" + device.platform + "] [" + device.version + "]");
-            if (device.platform == 'iPhone' && device.version == '5.0') {
+            alert ("[" + device.platform + "] [" + device.version + "]");
+            if (device.platform == 'iOS' && device.version == '6') {
                 // Move content a bit on iPhone 5 so the status bar does not overlap
                 document.body.style.marginTop = "20px";
-                this.showAlert ('Hello iPhone5 user...');
             }
+        } else {
+            alert ('Unrecognized device');
         }
     },
 
