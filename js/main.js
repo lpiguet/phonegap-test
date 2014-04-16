@@ -135,6 +135,7 @@ app.initialize();
 
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady () {
+    alert ('onDeviceReady');
     alert ("Platform: [" + device.platform + "] [" + device.version + "]");
     if (device.platform == 'iOS' && device.version == '6') {
         // Move content a bit on iPhone 5 so the status bar does not overlap
