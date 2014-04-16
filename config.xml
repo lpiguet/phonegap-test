@@ -24,7 +24,6 @@
     <feature name="http://api.phonegap.com/1.0/notification"/>
 -->
     <feature name="http://api.phonegap.com/1.0/network"/>
-    <feature name="http://api.phonegap.com/1.0/device"/>
 
     <icon src="icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36.png" />
@@ -49,6 +48,8 @@
 
     <gap:platform name="android" />
     <gap:platform name="ios" />
+
+    <gap:plugin name="org.apache.cordova.device"/>
 
     <access origin="*" />
  
