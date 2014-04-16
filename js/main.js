@@ -117,15 +117,14 @@ var app = {
 
         this.detailsURL = /^#results\/(\d{1,})/;
 
-//        alert ("Platform: [" + device.platform + "] [" + device.version + "] ["+device.model+"]");
+        alert ("Platform: [" + device.platform + "] [" + device.version + "] ["+device.model+"]");
 
-        if (device.model) {
-            if (device.model.substring(0,7) == 'iPhone5' || 
-                device.model.substring(0,7) == 'iPhone6' ||
-                device.model.substring(0,5) == 'iPad4') {
-                // Move content a bit on iPhone 5 so the status bar does not overlap
-                document.body.style.marginTop = "20px";
-            }
+        if (typeof (device) !== 'undefined' && 
+            (device.platform == 'iOS' && device.version(0,1) == '7')) {
+            // Move content a bit on iOS 7 devices so the status bar does not overlap
+            $('body').addClass('ios7');
+            var orig_height = $('body').height();
+            $('body').css('height', orig_height-20);
         }
 
         if (window.location.hostname == 'local-appstage.eks.com') {
@@ -143,7 +142,11 @@ var app = {
     },
 
     initialize: function () {
-        document.addEventListener('deviceready', $.proxy(this.onDeviceReady, this), false);
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+            document.addEventListener('deviceready', $.proxy(this.onDeviceReady, this), false);
+        } else {
+            this.onDeviceReady();
+        }
     }
 };
 
