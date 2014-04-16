@@ -39,14 +39,10 @@ var app = {
     },
 
     onDeviceReady: function() {
-        if (typeof device !== 'undefined') {
-            alert ("[" + device.platform + "] [" + device.version + "]");
-            if (device.platform == 'iOS' && device.version == '6') {
-                // Move content a bit on iPhone 5 so the status bar does not overlap
-                document.body.style.marginTop = "20px";
-            }
-        } else {
-            alert ('Unrecognized device');
+        alert ("[" + device.platform + "] [" + device.version + "]");
+        if (device.platform == 'iOS' && device.version == '6') {
+            // Move content a bit on iPhone 5 so the status bar does not overlap
+            document.body.style.marginTop = "20px";
         }
     },
 
