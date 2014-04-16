@@ -39,8 +39,6 @@ var Auth = function (backend) {
             version = device.version;
         }
 
-        alert ("Auth Platform: [" + device.platform + "] [" + device.version + "]");
-
         var txt = '<div class="row user form"><div id="login-error"></div><form accept-charset="utf-8" method="post" id="UserLoginForm" class="nice" action="';
         txt += this.backend+'/mobile/authenticate"><div style="display:none;">';
         txt += '<input type="hidden" value="POST" name="_method">';
