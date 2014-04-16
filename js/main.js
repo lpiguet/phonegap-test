@@ -125,6 +125,7 @@ var app = {
         this.registerEvents();
 
         if (typeof device !== 'undefined') {
+            this.showAlert (device.platform + " " + device.version);
             if (device.platform == 'iPhone' && device.version == '5.0') {
                 // Move content a bit on iPhone 5 so the status bar does not overlap
                 document.body.style.marginTop = "20px";
