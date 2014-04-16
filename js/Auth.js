@@ -1,9 +1,6 @@
 var Auth = function (backend) {
 
     this.initialize = function () {
-        if (!this.getTicket()) {
-            this.drawLogin();
-        }
     }
 
     this.getTicket = function () {
@@ -42,11 +39,7 @@ var Auth = function (backend) {
             version = device.version;
         }
 
-        alert ("Platform: [" + device.platform + "] [" + device.version + "]");
-        if (device.platform == 'iOS' && device.version == '6') {
-            // Move content a bit on iPhone 5 so the status bar does not overlap
-            document.body.style.marginTop = "20px";
-        }
+        alert ("Auth Platform: [" + device.platform + "] [" + device.version + "]");
 
         var txt = '<div class="row user form"><div id="login-error"></div><form accept-charset="utf-8" method="post" id="UserLoginForm" class="nice" action="';
         txt += this.backend+'/mobile/authenticate"><div style="display:none;">';
