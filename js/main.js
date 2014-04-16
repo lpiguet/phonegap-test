@@ -123,6 +123,15 @@ var app = {
         }
 
         this.registerEvents();
+
+        if (typeof device !== 'undefined') {
+            if (device.platform == 'iPhone' && device.version == '5.0') {
+                // Move content a bit on iPhone 5 so the status bar does not overlap
+                document.body.style.marginTop = "20px";
+                this.showAlert ('Hello iPhone5 :)');
+            }
+        }
+
         this.auth = new Auth (this.backend);
         this.store = new WebStore(this.backend, this.auth, function () { 
             self.route();
