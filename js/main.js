@@ -35,7 +35,7 @@ var app = {
         }
 */
         $(window).on('hashchange', $.proxy(this.route, this));
-        document.addEventListener('deviceready', $.proxy(this.onDeviceReady, this), false);
+        document.addEventListener('deviceready', this.onDeviceReady, false);
     },
 
     onDeviceReady: function() {
