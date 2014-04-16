@@ -117,15 +117,17 @@ var app = {
 
         this.detailsURL = /^#results\/(\d{1,})/;
 
-        alert ("Platform: [" + device.platform + "] [" + device.version + "] ["+device.model+"]");
-/*
+//        alert ("Platform: [" + device.platform + "] [" + device.version + "] ["+device.model+"]");
+
         if (device.model) {
-            if (device.model.substring(0,7) == 'iPhone5' || device.model.substring(0,7) == 'iPhone6') {
+            if (device.model.substring(0,7) == 'iPhone5' || 
+                device.model.substring(0,7) == 'iPhone6' ||
+                device.model.substring(0,5) == 'iPad4') {
                 // Move content a bit on iPhone 5 so the status bar does not overlap
                 document.body.style.marginTop = "20px";
             }
         }
-*/
+
         if (window.location.hostname == 'local-appstage.eks.com') {
             this.backend = 'http://local-appstage.eks.com/eps'; // local version
         } else {
