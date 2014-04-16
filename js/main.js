@@ -112,9 +112,18 @@ var app = {
         });
     },
 
-    initialize: function() {
+    onDeviceReady: function() {
         var self = this;
+
         this.detailsURL = /^#results\/(\d{1,})/;
+
+        alert ("Platform: [" + device.platform + "] [" + device.version + "] ["+device.model+"]");
+        if (device.model) {
+            if (device.model.substring(0,7) == 'iPhone5' || device.model.substring(0,7) == 'iPhone6') {
+                // Move content a bit on iPhone 5 so the status bar does not overlap
+                document.body.style.marginTop = "20px";
+            }
+        }
 
         if (window.location.hostname == 'local-appstage.eks.com') {
             this.backend = 'http://local-appstage.eks.com/eps'; // local version
@@ -128,19 +137,11 @@ var app = {
         this.store = new WebStore(this.backend, this.auth, function () { 
             self.route();
         });
+    },
+
+    initialize: function () {
+        document.addEventListener('deviceready', $.proxy(this.onDeviceReady, this), false);
     }
 };
 
 app.initialize();
-
-document.addEventListener('deviceready', onDeviceReady, false);
-function onDeviceReady () {
-    alert ('onDeviceReady');
-
-    alert ("Platform: [" + device.platform + "] [" + device.version + "]");
-    if (device.platform == 'iOS' && device.version == '6') {
-        // Move content a bit on iPhone 5 so the status bar does not overlap
-        document.body.style.marginTop = "20px";
-    }
-
-}

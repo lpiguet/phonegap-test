@@ -1,4 +1,4 @@
-&#14;<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.eks.mobilesearch"
@@ -40,11 +40,25 @@
     <gap:splash gap:density="hdpi" gap:platform="android" src="res/screen/android/screen-480x800.png" />
     <gap:splash gap:density="xhdpi" gap:platform="android" src="res/screen/android/screen-720x1280.png" />
 
-    <gap:splash gap:platform="ios" height="480" src="res/screen/ios/screen-320x480.png" width="320" />
-    <gap:splash gap:platform="ios" height="960" src="res/screen/ios/screen-640x960.png" width="640" />
-    <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-768x1004.png" width="768" />
-    <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-1024x783.png" width="1024" />
-    <gap:splash gap:platform="ios" height="1136" src="res/screen/ios/screen-640x1136.png" width="640" />
+    <!-- iPhone -->
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-320x480.png" width="320" height="480"/>
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-480x320.png" width="480" height="320"/>
+
+    <!-- iPhone 4 -->
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-640x960.png" width="640" height="960"/>
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-960x640.png" width="960" height="640"/>
+
+    <!-- iPhone 5 -->
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-640x1116.png" width="640" height="1136"/>
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-1136x620.png" width="1136" height="640"/>
+
+    <!-- iPad -->
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-768x1004.png" width="768" height="1024"/>
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-1024x748.png" width="1024" height="768"/>
+
+    <!-- iPad Retina -->
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-1536x2008.png" width="1536" height="2048"/>
+    <gap:splash gap:platform="ios" src="res/screen/ios/screen-2048x1496.png" width="2048" height="1536"/>
 
     <gap:platform name="android" />
     <gap:platform name="ios" />
