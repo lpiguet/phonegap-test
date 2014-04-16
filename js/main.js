@@ -39,8 +39,8 @@ var app = {
     },
 
     onDeviceReady: function() {
-        alert ("[" + device.platform + "] [" + device.version + "]");
-        if (device.platform == 'iOS' && device.version == '6') {
+        alert ("[" + window.device.platform + "] [" + window.device.version + "]");
+        if (window.device.platform == 'iOS' && window.device.version == '6') {
             // Move content a bit on iPhone 5 so the status bar does not overlap
             document.body.style.marginTop = "20px";
         }
