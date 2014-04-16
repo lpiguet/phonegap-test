@@ -117,7 +117,7 @@ var app = {
 
         this.detailsURL = /^#results\/(\d{1,})/;
 
-        alert ("Platform: [" + device.platform + "] [" + device.version + "] ["+device.model+"]");
+//        alert ("Platform: [" + device.platform + "] [" + device.version + "] ["+device.model+"]");
 
         if (typeof (device) !== 'undefined' && 
             (device.platform == 'iOS' && device.version(0,1) == '7')) {
@@ -145,6 +145,7 @@ var app = {
         if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
             document.addEventListener('deviceready', $.proxy(this.onDeviceReady, this), false);
         } else {
+            alert ('Running on browser');
             this.onDeviceReady();
         }
     }
