@@ -148,7 +148,6 @@ li {
 li>a {
     color: #000;
     display: block;
-    padding: 5px;
     text-decoration: none;
     width: 100%;
     -webkit-box-flex: 1;
@@ -215,7 +214,8 @@ h2 {
 }
 
 .scroll {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     position: absolute;
     top: 84px;
@@ -279,10 +279,10 @@ label {
   font-size:100%;
 }
 
-div.record .project, .result-list .project { font-size:0.8em; color:#999; margin-bottom:3px;}
-div.record .text, .result-list .text { color:#251b3e;  margin-bottom:3px;}
+div.record .project, #result-list .project { font-size:0.8em; color:#999; margin-bottom:3px;}
+div.record .text, #result-list .text { color:#251b3e;  margin-bottom:3px;}
 
-div.record .details, .result-list .details { font-size:0.8em; white-space:pre-wrap; color:#0b677c; }
+div.record .details, #result-list .details { font-size:0.8em; white-space:pre-wrap; color:#0b677c; }
 div.record table.fields { width:100%; margin:0px; }
 div.record table.fields td { width:50%; vertical-align:top;}
 .record td { padding:6px; }
@@ -290,10 +290,15 @@ div.record div.field { padding:2px; background-color:#bfd2d7; clear:left; margin
 div.field div { display:inline; margin-right:4px; font-size:0.8em; }
 div.field div.field_label { font-weight:bold; }
 
-ul.result-list li { padding: 2px 6px; }
+ul#result-list li { padding: 8px 0px 8px 10px; }
 
 fieldset {
   border-radius:6px;
+}
+
+#status {
+  padding:8px 10px;
+  font-family: 'FiraSansMedium';
 }
 
 #loading {

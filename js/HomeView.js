@@ -45,13 +45,16 @@ var HomeView = function(app) {
         if (tstr.length > 2) {
             app.store.findByName(tstr, pidstr, function(data) {
                 if (data) {
-                    $('.result-list').html(HomeView.liTemplate(data));
+                    $('#status').html(data.length + ' items found');
+                    $('#result-list').html(HomeView.liTemplate(data));
                 } else {
-                    $('.result-list').html('<li>No results</li>');
+                    $('#status').html('0 items found');
+                    $('#result-list').html('');
                 }
             });
         } else {
-            $('.result-list').html('');
+            $('#status').html('');
+            $('#result-list').html('');
         }
     };
 
