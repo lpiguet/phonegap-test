@@ -39,8 +39,8 @@ input {
     background: #666;
     background-image:url('../img/eks_pattern.jpg');
     background-size:cover;
-    height: 44px;
-    line-height: 44px;
+    height: 64px;
+    line-height: 85px;
     width: 100%;
     color: #fff;
     -webkit-user-select: none;
@@ -53,13 +53,10 @@ input {
     font-family:FiraSansMedium;
     font-weight:normal;
     font-size: 20px;
-    margin: 0 0 0 5px;
+    margin: 0 0 0 10px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
     display:inline;
 }
 
@@ -79,7 +76,7 @@ input {
 }
 
 .header select {
-    margin: 10px;
+    margin: 30px 10px 10px 80px;
 }
 
 .search-bar {
@@ -219,7 +216,7 @@ h2 {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     position: absolute;
-    top: 84px;
+    top: 104px;
     bottom: 0px;
     left: 0px;
     right: 0px;
