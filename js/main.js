@@ -119,8 +119,8 @@ var app = {
 
 //        alert ("Platform: [" + device.platform + "] [" + device.version + "] ["+device.model+"]");
 
-        if (1 || typeof (device) !== 'undefined' && 
-            (device.platform == 'iOS' && device.version(0,1) == '7')) {
+        if (typeof (device) !== 'undefined' && 
+            (device.platform == 'iOS' && device.version.substring(0,1) == '7')) {
             // Move content a bit on iOS 7 devices so the status bar does not overlap
             $('body').addClass('ios7');
             var orig_height = $('body').height();
