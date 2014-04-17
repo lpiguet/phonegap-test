@@ -67,7 +67,7 @@
     <gap:plugin name="org.apache.cordova.statusbar"/>
 
     <preference name="DisallowOverscroll" value="true"/>
-    <preference name="Fullscreen" value="true" />
+<!--    <preference name="Fullscreen" value="true" /> -->
     <preference name="StatusBarOverlaysWebView" value="false" />
 
     <access origin="*" />
