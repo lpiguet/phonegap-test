@@ -25,9 +25,6 @@
 -->
     <feature name="http://api.phonegap.com/1.0/network"/>
 
-    <preference name="DisallowOverscroll" value="true"/>
-    <preference name="Fullscreen" value="true" />
-
     <icon src="icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36.png" />
     <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48.png" />
@@ -67,6 +64,11 @@
     <gap:platform name="ios" />
 
     <gap:plugin name="org.apache.cordova.device"/>
+    <gap:plugin name="org.apache.cordova.statusbar"/>
+
+    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="Fullscreen" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
 
     <access origin="*" />
  
