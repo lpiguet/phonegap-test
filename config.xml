@@ -64,7 +64,7 @@
     <gap:platform name="ios" />
 
     <gap:plugin name="org.apache.cordova.device"/>
-    <gap:plugin name="org.apache.cordova.statusbar"/>
+    <gap:plugin name="com.phonegap.plugin.statusbar"/>
 
     <preference name="DisallowOverscroll" value="true"/>
 <!--    <preference name="Fullscreen" value="true" /> -->
