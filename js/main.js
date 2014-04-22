@@ -79,10 +79,7 @@ var app = {
             page.bindEvents();
             return;
         }
-        
-        // Cleaning up: remove old pages that were moved out of the viewport
-        $('.stage-right, .stage-left').not('#homePage').remove();
-        
+       
         if (page === app.homePage) {
             // Always apply a Back transition (slide from left) when we go back to the search page
             $(page.el).attr('class', 'page stage-left');
@@ -109,6 +106,9 @@ var app = {
             } else {
                 $('#search-key').blur();
             }
+
+            // Cleaning up: remove old pages that were moved out of the viewport
+            $('.stage-right, .stage-left').not('#homePage').remove();
         });
     },
 
