@@ -1,15 +1,18 @@
-var Auth = function (backend) {
+function Auth (name, addr) {
 
     this.initialize = function () {
+        this.name = name;
+        this.addr = addr;
+        this.localStoragePrefix = this.name+'-'+this.addr;
     }
 
     this.getTicket = function () {
 
-        var ticket = localStorage.getItem ('ticket');
+        var ticket = localStorage.getItem (this.localStoragePrefix+'-ticket');
 //        console.log ('Checked ticket:'+ticket);
         if (ticket) {
 //            console.log ('Auth: success');
-            return true;
+            return ticket;
         } else {
 //            console.log ('Auth: no ticket');
             return false;
@@ -17,7 +20,7 @@ var Auth = function (backend) {
     }
 
     this.logout = function () {
-        localStorage.removeItem ('ticket');
+        localStorage.removeItem (this.localStoragePrefix+'-ticket');
         location.reload(); // reload the page
     }
 
@@ -27,6 +30,7 @@ var Auth = function (backend) {
         var name;
         var platform;
         var version;
+
         if (typeof device === 'undefined') {
             uuid = 'browser';
             name = navigator.appCodeName;
@@ -40,7 +44,7 @@ var Auth = function (backend) {
         }
 
         var txt = '<div class="row user form"><div id="login-error"></div><form accept-charset="utf-8" method="post" id="UserLoginForm" class="nice" action="';
-        txt += this.backend+'/mobile/authenticate"><div style="display:none;">';
+        txt += this.addr+'"><div style="display:none;">';
         txt += '<input type="hidden" value="POST" name="_method">';
         txt += '<input type="hidden" value="'+uuid+'" name="data[Device][uuid]" />';
         txt += '<input type="hidden" value="'+name+'" name="data[Device][name]" />';
@@ -59,6 +63,8 @@ var Auth = function (backend) {
 
     this.bindEvents = function () {
 
+        var self = this;
+
         $('#UserUsername').focus();
 
         //callback handler for form submit
@@ -76,9 +82,9 @@ var Auth = function (backend) {
                     console.log ('Success: received: ' + data);
                     var result = jQuery.parseJSON (data);
                     if (result && result.status == 'OK') {
-                        localStorage.setItem ('ticket', result.ticket);
-                        localStorage.setItem ('projects', JSON.stringify (result.projects));
-                        console.log ('Success: stored: ' + localStorage.getItem ('ticket'));
+                        localStorage.setItem (self.localStoragePrefix+'-ticket', result.ticket);
+                        localStorage.setItem (self.localStoragePrefix+'-projects', JSON.stringify (result.projects));
+                        console.log ('Success: stored: ' + localStorage.getItem (self.localStoragePrefix+'-ticket') + ' - ' + self.localStoragePrefix+'-ticket');
                         $("#login-div").empty();
                         location.reload(); // reload the page
                     } else {
@@ -96,8 +102,10 @@ var Auth = function (backend) {
         });
     }
 
-    this.backend = backend;
     this.initialize();
+
+//    console.log ('new '+ this.constructor.name + ': '+ JSON.stringify(this));
+
 }
 
 Auth.template = Handlebars.compile($("#auth-tpl").html());

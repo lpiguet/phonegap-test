@@ -319,3 +319,11 @@ fieldset {
 .ios7 {
   margin-top:20px;
 }
+
+.form-field {
+  margin:6px 0px;
+}
+
+fieldset legend {
+ color:#0b677c;
+}

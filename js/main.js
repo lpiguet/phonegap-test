@@ -38,11 +38,12 @@ var app = {
 
     },
 
-    route: function(store) {
+    route: function() {
         var self = this;
+//        console.log ('new '+ this.constructor.name + ': '+ JSON.stringify(this));
 
-        if (!this.auth.getTicket()) {
-            this.slidePage(this.auth.drawLogin());
+        if (!this.backend.auth.getTicket()) {
+            this.slidePage(this.backend.auth.drawLogin());
             return;
         }
 
@@ -113,9 +114,6 @@ var app = {
     },
 
     onDeviceReady: function() {
-        var self = this;
-
-        this.detailsURL = /^#results\/(\d{1,})/;
 
 //        alert ("Platform: [" + device.platform + "] [" + device.version + "] ["+device.model+"]");
 
@@ -128,21 +126,22 @@ var app = {
             $('body').css('height', orig_height-20);
         }
 */
-        if (window.location.hostname == 'local-appstage.eks.com') {
-            this.backend = 'http://local-appstage.eks.com/eps'; // local version
-        } else {
-            this.backend = 'https://appstage.eks.com/eps'; // deployed version
-        }
-
-        this.registerEvents();
-
-        this.auth = new Auth (this.backend);
-        this.store = new WebStore(this.backend, this.auth, function () { 
-            self.route();
-        });
     },
 
     initialize: function () {
+        var self = this;
+
+        this.detailsURL = /^#results\/(\d{1,})/;
+
+        this.registerEvents();
+
+        this.backend = new Backend ('mobile-search', 'appstage.eks.com', 'eps', '/mobile/authenticate');
+//        this.backend = new Backend ('terms-manager', 'stage-extranets.eks.com', 'tm', '/gates');        
+
+        this.store = new WebStore(this.backend, function () { 
+            self.route();
+        });
+
         if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
             document.addEventListener('deviceready', $.proxy(this.onDeviceReady, this), false);
         } else {

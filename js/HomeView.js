@@ -3,11 +3,11 @@ var HomeView = function(app) {
     this.initialize = function() {
         // Define a div wrapper for the view. The div wrapper is used to attach events.
         this.el = $('<div id="homePage"/>');
-        this.el.on('keyup', '.search-key', $.proxy(function() { this.autocomplete(); }, this));
+        this.el.on('keyup', '.search-key', $.proxy(function(e) { this.autocomplete(e); }, this));
         this.el.on('change', '#pid', this.findByName);
 
         this.el.on('click', '#logout', function (event) {
-            $.proxy(app.auth.logout(), this);
+            $.proxy(app.backend.auth.logout(), this);
         });
 
     };
@@ -19,7 +19,7 @@ var HomeView = function(app) {
 
     this.bindEvents = function () { 
         // Populate projects menu
-        var projectsStr = localStorage.getItem ('projects');
+        var projectsStr = localStorage.getItem (app.backend.auth.localStoragePrefix+'-projects');
         if (projectsStr) {
             var projects = jQuery.parseJSON (projectsStr);
             if (projects) {
@@ -34,7 +34,15 @@ var HomeView = function(app) {
         }
     };
 
-    this.autocomplete = function () {
+    this.autocomplete = function (e) {
+
+        if(e.keyCode == 27) {
+            $('.search-key').val('');
+            $('#result-list').html('');
+            $('#status').html('');
+            return;
+        }
+
         if (mytimeout) { window.clearTimeout(mytimeout); }
         mytimeout = window.setTimeout($.proxy (function() { this.findByName()}, this), 500);
     }

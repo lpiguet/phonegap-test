@@ -1,4 +1,6 @@
-var WebStore = function(backend, ticket, successCallback, errorCallback) {
+function WebStore (backend, successCallback, errorCallback) {
+
+    this.ticket = backend.auth.getTicket();
 
     // Used to simulate async calls. This is done to provide a consistent interface with stores (like WebSqlStore)
     // that use async data access APIs
@@ -15,7 +17,7 @@ var WebStore = function(backend, ticket, successCallback, errorCallback) {
         localStorage.setItem('pid', pid);
 //        console.log ('Ticket: '+ticket);
         $.getJSON(
-            this.backend+'/mobile/getdata/query/'+pid+'/'+searchKey+'.json?ticket='+ticket,
+            this.backend.getAddr()+'/mobile/getdata/query/'+pid+'/'+searchKey+'.json?ticket='+ticket,
             function (res) {
                 if (res && res.status == 'ERROR-AUTH') {
                     localStorage.removeItem ('ticket');
@@ -33,7 +35,7 @@ var WebStore = function(backend, ticket, successCallback, errorCallback) {
         var ticket = localStorage.getItem('ticket');
 
         $.getJSON(
-            this.backend+'/mobile/getdata/id/'+pid+'/'+id+'.json?ticket='+ticket,
+            this.backend.getAddr()+'/mobile/getdata/id/'+pid+'/'+id+'.json?ticket='+ticket,
             function (res) {
                 if (res) {
 //                    console.log ('getdata/id: Result: '+ res.length + ' items');
@@ -43,5 +45,8 @@ var WebStore = function(backend, ticket, successCallback, errorCallback) {
         );
     };
     this.backend = backend;
+
+//    console.log ('new '+ this.constructor.name + ': '+ JSON.stringify(this));
+
     callLater(successCallback);
 }
