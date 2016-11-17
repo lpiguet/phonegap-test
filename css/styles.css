@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    font-family: FiraSansRegular, sans-serif;
+    font-family: Lato, FiraSansRegular, sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
@@ -32,7 +32,7 @@ body {
 }
 
 input {
-    font-family: FiraSansRegular, sans-serif;
+    font-family: Lato, FiraSansRegular, sans-serif;
 }
 
 .header {
@@ -50,7 +50,7 @@ input {
 
 .header h1 {
     padding: 0;
-    font-family:FiraSansMedium;
+    font-family:Lato, FiraSansMedium;
     font-weight:normal;
     font-size: 20px;
     margin: 0 0 0 5px;
@@ -113,36 +113,22 @@ ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #fafafa;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-li {
-    display: block;
-    border-top: 1px solid #c0c0c0;
-    padding: 10px;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
     background-color: #fff;
-    border-bottom: 1px solid #e0e0e0;
+//    border-bottom: 1px solid #e0e0e0;
 }
 
 li {
     display: block;
     border-top: 1px solid #e0e0e0;
-    padding: 10px;
-}
-
-li {
     padding: 0;
     display: -webkit-box;
     display: -moz-box;
     display: box;
     width: 100%;
+}
+
+li:hover {
+    background-color:#fafafa;
 }
 
 li>a {
@@ -279,7 +265,8 @@ label {
   font-size:100%;
 }
 
-div.record .project, #result-list .project { font-size:0.8em; color:#999; margin-bottom:3px;}
+div.record .project, #result-list .project { font-size:0.8em; color:#999; margin-bottom:3px; font-weight:bold;}
+div.record .breadcrumb, #result-list .breadcrumb { font-size:0.8em; color:#999; margin-bottom:3px;}
 div.record .text, #result-list .text { color:#251b3e;  margin-bottom:3px;}
 
 div.record .details, #result-list .details { font-size:0.8em; white-space:pre-wrap; color:#0b677c; }
@@ -298,7 +285,7 @@ fieldset {
 
 #status {
   padding:8px 10px;
-  font-family: 'FiraSansMedium';
+  font-family: Lato, FiraSansMedium;
 }
 
 #loading {
