@@ -64,6 +64,16 @@ var app = {
                 self.slidePage(new ResultView(data).render());
             });
         }
+
+        var match = hash.match(app.editURL);
+        if (match) {
+            var pidstr = $('#pid').val();
+
+            this.store.findById(Number(match[1]), Number(pidstr), function(data) {
+                self.slidePage(new EditView(data).render());
+            });
+        }
+
     },
 
     slidePage: function(page) {
@@ -132,6 +142,7 @@ var app = {
         var self = this;
 
         this.detailsURL = /^#results\/(\d{1,})/;
+        this.editURL = /^#edit\/(\d{1,})/;
 
         this.registerEvents();
 

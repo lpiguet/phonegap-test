@@ -274,8 +274,8 @@ div.record table.fields { width:100%; margin:0px; }
 div.record table.fields td { width:50%; vertical-align:top;}
 .record td { padding:6px; }
 div.record div.field { padding:2px; background-color:#bfd2d7; clear:left; margin:2px 0px;border-radius:3px; }
-div.field div { display:inline; margin-right:4px; font-size:0.8em; }
-div.field div.field_label { font-weight:bold; }
+div.field div { display:inline; margin-right:4px; font-size:0.8em;  vertical-align: top;}
+div.field div.field_label { font-weight:bold; width:50px;}
 
 ul#result-list li { padding: 8px 0px 8px 10px; }
 
