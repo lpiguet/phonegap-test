@@ -10,141 +10,6 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
-<script id="home-tpl" type="text/x-handlebars-template">
-    <div class='header'>
-      <h1>EKS - Event Planning Solution</h1>
-      <a href="#" class="button" id="logout"><i class="fi-power"></i></a>
-      <select id='pid' class="right" name="pid">
-      </select>
-
-    </div>
-    <div class="logo"></div>
-    <div class='search-bar'>
-      <input id='search-key' class='search-key' type="search"/>
-    </div>
-    <div class="scroll"><div id="status"></div><ul id="result-list"></ul></div>
-</script>
-
-<script id="project-options-tpl" type="text/x-handlebars-template">
-    {{#.}}
-    <option value="{{this.id}}">{{this.name}}</option>
-    {{/.}}
-</script>
-
-<script id="auth-tpl" type="text/x-handlebars-template">
-    <div class='header'><h1>EPS Search</h1>
-    </div>
-    <div class="logo"></div>
-    <div id="login_form"></div>
-</script>
-
-
-<script id="result-li-tpl" type="text/x-handlebars-template">
-    {{#.}}
-    <li><a href="#results/{{this.id}}"><div class="project">{{this.project}}</div><div class="breadcrumb">{{{this.bc}}}</div><div class="text">{{this.text}}</div><div class="details">{{ellipsis this.details 200 "&hellip;"}}</div></a></li>
-    {{/.}}
-</script>
-
-<script id="result-tpl" type="text/x-handlebars-template">
-    <div class='header'><a href='#' class="button button-border"><i class="fi-arrow-left"></i></a><h1>Details</h1></div>
-    <div class="logo"></div>
-    {{#.}}
-    <div class="record">
-        <table class="fields">
-          <tr>
-            <td colspan="2">
-              <div class="project">{{project}}</div>
-              <div class="breadcrumb">{{{bc}}}</div>
-              <div class="text">{{text}}</div>
-          {{#if details}}
-              <div class="details">{{details}}</div>
-          {{/if}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              {{#if id}}<div class="field"><div class="field_label">Id:</div><div class="field_value">{{id}}</div></div>{{/if}}
-
-              {{#if rating}}<div class="field"><div class="field_label">#:</div><div class="field_value">{{rating}}</div></div>{{/if}}
-              {{#if status}}<div class="field"><div class="field_label">Status:</div><div class="field_value">{{status}}</div></div>{{/if}}
-
-              {{#if code}}<div class="field"><div class="field_label">Code:</div><div class="field_value">{{code}}</div></div>{{/if}}
-              {{#if date_raised}}<div class="field"><div class="field_label">Raised:</div><div class="field_value">{{date_raised}}</div></div>{{/if}}
-              {{#if date_start}}<div class="field"><div class="field_label">Start:</div><div class="field_value">{{date_start}}</div></div>{{/if}}
-              {{#if date_due}}<div class="field"><div class="field_label">End/Due:</div><div class="field_value">{{date_due}}</div></div>{{/if}}
-              {{#if date_completed}}<div class="field"><div class="field_label">Completed:</div><div class="field_value">{{date_completed}}</div></div>{{/if}}
-
-
-              {{#if assigned_to}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{assigned_to}}</div></div>{{/if}}
-              {{#if owned_by}}<div class="field"><div class="field_label">Owned:</div><div class="field_value">{{owned_by}}</div></div>{{/if}}
-              {{#if raised_by}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{raised_by}}</div></div>{{/if}}
-            </td>
-            <td>
-              {{#if custom1}}<div class="field"><div class="field_label">Custom1:</div><div class="field_value">{{custom1}}</div></div>{{/if}}
-              {{#if custom2}}<div class="field"><div class="field_label">Custom2:</div><div class="field_value">{{custom2}}</div></div>{{/if}}
-              {{#if custom3}}<div class="field"><div class="field_label">Custom3:</div><div class="field_value">{{custom3}}</div></div>{{/if}}
-              {{#if custom4}}<div class="field"><div class="field_label">Custom4:</div><div class="field_value">{{custom4}}</div></div>{{/if}}
-              {{#if custom5}}<div class="field"><div class="field_label">Custom5:</div><div class="field_value">{{custom5}}</div></div>{{/if}}
-
-            </td>
-          </tr>
-        </table>
-    </div>
-    {{/.}}
-</script>
-
-
-
-<!--  ------------------------------------- -->
-
-<script id="edit-tpl" type="text/x-handlebars-template">
-    <div class='header'><a href='#' class="button button-border"><i class="fi-arrow-left"></i></a><h1>Details</h1></div>
-    <div class="logo"></div>
-    {{#.}}
-    <form id="edit_form" method="post">
-    <div class="record">
-        <table class="fields">
-          <tr>
-            <td colspan="2">
-              <div class="project">{{project}}</div>
-              <div class="breadcrumb">{{{bc}}}</div>
-              <div class="field"><div class="field_label">Text:</div><input class="input" name="data[Issue][text]" value="{{text}}"></input></div>
-              <div class="field"><div class="field_label">Details:</div><textarea rows="4" name="data[Issue][details]">{{details}}</textarea></div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              {{#if id}}<div class="field"><div class="field_label">Id:</div><div class="field_value">{{id}}</div></div>{{/if}}
-
-              {{#if rating}}<div class="field"><div class="field_label">#:</div><div class="field_value">{{rating}}</div></div>{{/if}}
-              {{#if status}}<div class="field"><div class="field_label">Status:</div><div class="field_value">{{status}}</div></div>{{/if}}
-
-              {{#if code}}<div class="field"><div class="field_label">Code:</div><div class="field_value">{{code}}</div></div>{{/if}}
-              {{#if date_raised}}<div class="field"><div class="field_label">Raised:</div><div class="field_value">{{date_raised}}</div></div>{{/if}}
-              {{#if date_start}}<div class="field"><div class="field_label">Start:</div><div class="field_value">{{date_start}}</div></div>{{/if}}
-              {{#if date_due}}<div class="field"><div class="field_label">End/Due:</div><div class="field_value">{{date_due}}</div></div>{{/if}}
-              {{#if date_completed}}<div class="field"><div class="field_label">Completed:</div><div class="field_value">{{date_completed}}</div></div>{{/if}}
-
-
-              {{#if assigned_to}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{assigned_to}}</div></div>{{/if}}
-              {{#if owned_by}}<div class="field"><div class="field_label">Owned:</div><div class="field_value">{{owned_by}}</div></div>{{/if}}
-              {{#if raised_by}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{raised_by}}</div></div>{{/if}}
-            </td>
-            <td>
-              {{#if custom1}}<div class="field"><div class="field_label">Custom1:</div><div class="field_value">{{custom1}}</div></div>{{/if}}
-              {{#if custom2}}<div class="field"><div class="field_label">Custom2:</div><div class="field_value">{{custom2}}</div></div>{{/if}}
-              {{#if custom3}}<div class="field"><div class="field_label">Custom3:</div><div class="field_value">{{custom3}}</div></div>{{/if}}
-              {{#if custom4}}<div class="field"><div class="field_label">Custom4:</div><div class="field_value">{{custom4}}</div></div>{{/if}}
-              {{#if custom5}}<div class="field"><div class="field_label">Custom5:</div><div class="field_value">{{custom5}}</div></div>{{/if}}
-
-            </td>
-          </tr>
-        </table>
-    </div>
-    </form>
-    {{/.}}
-</script>
-
 <!-- --------------------------------------------------------------- -->
 
 <script src="phonegap.js"></script>
@@ -152,12 +17,13 @@
 <script src="lib/jquery-1.8.2.min.js"></script>
 <script src="js/handlebars-helpers.js"></script>
 <script src="js/storage/eps-store.js"></script>
+<script src="js/loadTemplate.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="js/ResultView.js"></script>
 <script src="js/EditView.js"></script>
 <script src="js/Auth.js"></script>
 <script src="js/Backend.js"></script>
-<script src="js/main.js"></script>
+
 
 <div id="loading"></div>
 <script type="text/javascript">
@@ -170,6 +36,6 @@ $(document)
     $loading.hide();
   });
 </script>
-
+<script src="js/main.js"></script>
 </body>
 </html>

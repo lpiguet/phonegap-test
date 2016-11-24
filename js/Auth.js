@@ -56,6 +56,7 @@ function Auth (name, addr) {
         txt += '<div class="go"><button class="small button">Submit</button></div></fieldset></form></div></div>';
 
         this.el = $('<div id="login-div"/>');
+
         this.el.html(Auth.template());
         this.el.append (txt);        
         return this;
@@ -108,5 +109,9 @@ function Auth (name, addr) {
 
 }
 
-Auth.template = Handlebars.compile($("#auth-tpl").html());
+new LoadTemplate(null, 'auth-tpl').createAndWait (function (compiled, el) {
+    Auth.template = compiled;
+    console.log ('Auth template initialized');
+});
+
 

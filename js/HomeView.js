@@ -13,6 +13,7 @@ var HomeView = function(app) {
     };
  
     this.render = function() {
+        console.log ('HomeView render');
         this.el.html(HomeView.template());
         return this;
     };
@@ -67,9 +68,18 @@ var HomeView = function(app) {
     };
 
     this.initialize();
-
 }
- 
-HomeView.template = Handlebars.compile($("#home-tpl").html());
-HomeView.liTemplate = Handlebars.compile($("#result-li-tpl").html());
-HomeView.projectOptionsTemplate = Handlebars.compile($("#project-options-tpl").html());
+
+new LoadTemplate('homeView', 'home-tpl').createAndWait (function (compiled, el) {
+    HomeView.template = compiled;
+    console.log ('HomeView template initialized');
+});
+new LoadTemplate('#result-list', 'result-li-tpl').createAndWait (function (compiled, el) {
+    HomeView.liTemplate = compiled;
+    console.log ('HomeView.liTemplate initialized');
+});
+new LoadTemplate(null, 'project-options-tpl').createAndWait (function (compiled, el) {
+    HomeView.projectOptionsTemplate = compiled;
+    console.log ('HomeView.projectOptionsTemplate initialized');
+});
+

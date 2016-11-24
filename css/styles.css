@@ -127,7 +127,7 @@ li {
     width: 100%;
 }
 
-li:hover {
+li a:hover {
     background-color:#fafafa;
 }
 
@@ -241,10 +241,12 @@ li>a.tappable-active {
     -o-transition-duration: .375s;
 }
 
-h1, select#pid {
+h1 {
 max-width:40%;
 }
-
+select#pid {
+width:20px;
+}
 label {
   display:block; float:left;
   width:100px;
@@ -313,4 +315,13 @@ fieldset {
 
 fieldset legend {
  color:#0b677c;
+}
+
+.action_button {
+  text-align:center;
+  width:10%;
+  vertical-align:middle;
+}
+.action_button i {
+    font-size:2em;
 }

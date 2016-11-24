@@ -1,0 +1,45 @@
+    <div class='header'><a href='#' class="button button-border"><i class="fi-arrow-left"></i></a><h1>Details</h1></div>
+    <div class="logo"></div>
+    {{#.}}
+    <div class="record">
+        <table class="fields">
+          <tr>
+            <td colspan="2">
+              <div class="project">{{project}}</div>
+              <div class="breadcrumb">{{{bc}}}</div>
+              <div class="text">{{text}}</div>
+          {{#if details}}
+              <div class="details">{{details}}</div>
+          {{/if}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{#if id}}<div class="field"><div class="field_label">Id:</div><div class="field_value">{{id}}</div></div>{{/if}}
+
+              {{#if rating}}<div class="field"><div class="field_label">#:</div><div class="field_value">{{rating}}</div></div>{{/if}}
+              {{#if status}}<div class="field"><div class="field_label">Status:</div><div class="field_value">{{status}}</div></div>{{/if}}
+
+              {{#if code}}<div class="field"><div class="field_label">Code:</div><div class="field_value">{{code}}</div></div>{{/if}}
+              {{#if date_raised}}<div class="field"><div class="field_label">Raised:</div><div class="field_value">{{date_raised}}</div></div>{{/if}}
+              {{#if date_start}}<div class="field"><div class="field_label">Start:</div><div class="field_value">{{date_start}}</div></div>{{/if}}
+              {{#if date_due}}<div class="field"><div class="field_label">End/Due:</div><div class="field_value">{{date_due}}</div></div>{{/if}}
+              {{#if date_completed}}<div class="field"><div class="field_label">Completed:</div><div class="field_value">{{date_completed}}</div></div>{{/if}}
+
+
+              {{#if assigned_to}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{assigned_to}}</div></div>{{/if}}
+              {{#if owned_by}}<div class="field"><div class="field_label">Owned:</div><div class="field_value">{{owned_by}}</div></div>{{/if}}
+              {{#if raised_by}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{raised_by}}</div></div>{{/if}}
+            </td>
+            <td>
+              {{#if custom1}}<div class="field"><div class="field_label">Custom1:</div><div class="field_value">{{custom1}}</div></div>{{/if}}
+              {{#if custom2}}<div class="field"><div class="field_label">Custom2:</div><div class="field_value">{{custom2}}</div></div>{{/if}}
+              {{#if custom3}}<div class="field"><div class="field_label">Custom3:</div><div class="field_value">{{custom3}}</div></div>{{/if}}
+              {{#if custom4}}<div class="field"><div class="field_label">Custom4:</div><div class="field_value">{{custom4}}</div></div>{{/if}}
+              {{#if custom5}}<div class="field"><div class="field_label">Custom5:</div><div class="field_value">{{custom5}}</div></div>{{/if}}
+
+            </td>
+          </tr>
+        </table>
+    </div>
+    {{/.}}

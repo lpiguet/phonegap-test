@@ -1,11 +1,11 @@
-var ResultView = function (data) {
+var EditView = function (data) {
 
     this.initialize = function () {
         this.el = $('<div/>');
     };
 
     this.render = function () {
-        this.el.html(ResultView.template(data));
+        this.el.html(EditView.template(data));
         return this;
     };
 
@@ -14,6 +14,6 @@ var ResultView = function (data) {
     this.initialize();
 }
 
-new LoadTemplate(null, 'view-tpl').createAndWait (function (compiled, el) {
-    ResultView.template = compiled;
+new LoadTemplate(null, 'edit-tpl').createAndWait (function (compiled, el) {
+    EditView.template = compiled;
 });

@@ -12,7 +12,8 @@ function Backend (name, addr, endpoint, auth_endpoint) {
         this.addr = 'http://local-'+addr+'/'+endpoint; // local version
     } else if (window.location.hostname == 'local.'+addr) {
         this.addr = 'http://local.'+addr+'/'+endpoint; // local version
-    } else {        this.addr = 'https://'+addr+'/'+endpoint; // deployed version
+    } else {
+        this.addr = 'https://'+addr+'/'+endpoint; // deployed version
     }
 
     this.auth = new Auth (name, this.addr+auth_endpoint);

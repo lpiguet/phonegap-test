@@ -146,7 +146,8 @@ var app = {
 
         this.registerEvents();
 
-        this.backend = new Backend ('mobile-search', 'appstage.eks.com', 'eps', '/mobile/authenticate');
+        this.backend = new Backend ('mobile-search', 'mobile.eks.com', 'eps', '/mobile/authenticate');
+//        this.backend = new Backend ('mobile-search', 'appstage.eks.com', 'eps', '/mobile/authenticate');
 //        this.backend = new Backend ('terms-manager', 'stage-extranets.eks.com', 'tm', '/gates');        
 
         this.store = new WebStore(this.backend, function () { 
@@ -162,4 +163,5 @@ var app = {
     }
 };
 
-app.initialize();
+$('#loading').show();
+window.setTimeout (function () { $('#loading').hide(); app.initialize(); }, 1500); // wait 2s before initializing
