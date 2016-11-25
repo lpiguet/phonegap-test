@@ -31,11 +31,9 @@ function WebStore (backend, successCallback, errorCallback) {
     };
 
     this.findById = function(id, pid, callback) {
-
         var ticket = localStorage.getItem('ticket');
-
         $.getJSON(
-            this.backend.getAddr()+'/mobile/getdata/id/'+pid+'/'+id+'.json?ticket='+ticket,
+            this.backend.getAddr()+'/mobile/getdata/view/'+pid+'/'+id+'.json?ticket='+ticket,
             function (res) {
                 if (res) {
 //                    console.log ('getdata/id: Result: '+ res.length + ' items');
@@ -44,7 +42,24 @@ function WebStore (backend, successCallback, errorCallback) {
             }
         );
     };
+
+    this.edit = function(id, pid, callback) {
+        var ticket = localStorage.getItem('ticket');
+        $.getJSON(
+            this.backend.getAddr()+'/mobile/getdata/edit/'+pid+'/'+id+'.json?ticket='+ticket,
+            function (res) {
+                if (res) {
+//                    console.log ('getdata/id: Result: '+ res.length + ' items');
+                }
+                callLater(callback, res);
+            }
+        );
+    };
+
+
     this.backend = backend;
+
+
 
 //    console.log ('new '+ this.constructor.name + ': '+ JSON.stringify(this));
 

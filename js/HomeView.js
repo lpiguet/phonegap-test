@@ -54,7 +54,7 @@ var HomeView = function(app) {
         if (tstr.length > 2) {
             app.store.findByName(tstr, pidstr, function(data) {
                 if (data) {
-                    $('#status').html(data.length + ' items found');
+                    $('#status').html(data.items.length + ' items found');
                     $('#result-list').html(HomeView.liTemplate(data));
                 } else {
                     $('#status').html('0 items found');

@@ -124,7 +124,6 @@ li {
     display: -webkit-box;
     display: -moz-box;
     display: box;
-    width: 100%;
 }
 
 li a:hover {
@@ -135,20 +134,12 @@ li>a {
     color: #000;
     display: block;
     text-decoration: none;
-    width: 100%;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background-position: -10px 0;
-    background-repeat: no-repeat;
-    -webkit-background-size: 10px 100%;
-    -moz-background-size: 10px 100%;
-    -ms-background-size: 10px 100%;
-    -o-background-size: 10px 100%;
-    background-size: 10px 100%;
 }
 
 li>a * {
@@ -210,6 +201,17 @@ h2 {
     right: 0px;
 }
 
+.scrolltop {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 45px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
 li>a.tappable-active {
     color: #fff;
     background-color: #4286f5;
@@ -247,10 +249,11 @@ max-width:40%;
 select#pid {
 width:20px;
 }
-label {
+
+/*label {
   display:block; float:left;
-  width:100px;
-}
+  width:120px;
+}*/
 
 #login-form {
     max-width:350px;
@@ -319,9 +322,13 @@ fieldset legend {
 
 .action_button {
   text-align:center;
-  width:10%;
   vertical-align:middle;
+  width:80px;
 }
 .action_button i {
-    font-size:2em;
+    font-size:1.5em;
+}
+
+.result-entry {
+    width: 100%;
 }

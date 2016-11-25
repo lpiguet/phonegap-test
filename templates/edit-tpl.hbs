@@ -1,45 +1,1201 @@
-    <div class='header'><a href='#' class="button button-border"><i class="fi-arrow-left"></i></a><h1>Details</h1></div>
-    <div class="logo"></div>
-    {{#.}}
-    <form id="edit_form" method="post">
-    <div class="record">
-        <table class="fields">
-          <tr>
-            <td colspan="2">
-              <div class="project">{{project}}</div>
-              <div class="breadcrumb">{{{bc}}}</div>
-              <div class="field"><div class="field_label">Text:</div><input class="input" name="data[Issue][text]" value="{{text}}"></input></div>
-              <div class="field"><div class="field_label">Details:</div><textarea rows="4" name="data[Issue][details]">{{details}}</textarea></div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              {{#if id}}<div class="field"><div class="field_label">Id:</div><div class="field_value">{{id}}</div></div>{{/if}}
+<div class='header'><a href='#' class="button button-border"><i class="fi-arrow-left"></i></a><h1>Details</h1></div>
+<div class="logo"></div>
+<div class="scrolltop">
+{{#.}}
+<link rel="stylesheet" type="text/css" href="css/csstabs.css" />
+<link rel="stylesheet" type="text/css" href="css/edit.css" />
 
-              {{#if rating}}<div class="field"><div class="field_label">#:</div><div class="field_value">{{rating}}</div></div>{{/if}}
-              {{#if status}}<div class="field"><div class="field_label">Status:</div><div class="field_value">{{status}}</div></div>{{/if}}
+<form id="form903773088" onsubmit="event.returnValue = false; return false;" method="post" action="/eps/issues/edit/91764" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST" /></div>
+<input type="hidden" name="data[Issue][project_id]"  value="264" id="ProjectId" />
 
-              {{#if code}}<div class="field"><div class="field_label">Code:</div><div class="field_value">{{code}}</div></div>{{/if}}
-              {{#if date_raised}}<div class="field"><div class="field_label">Raised:</div><div class="field_value">{{date_raised}}</div></div>{{/if}}
-              {{#if date_start}}<div class="field"><div class="field_label">Start:</div><div class="field_value">{{date_start}}</div></div>{{/if}}
-              {{#if date_due}}<div class="field"><div class="field_label">End/Due:</div><div class="field_value">{{date_due}}</div></div>{{/if}}
-              {{#if date_completed}}<div class="field"><div class="field_label">Completed:</div><div class="field_value">{{date_completed}}</div></div>{{/if}}
+<div class="tabs">
+    <!-- Radio button and lable for #tab-content0 -->
+<!--    <input type="radio" name="tabs" id="tab0" checked disabled>-->
+    <label for="tab1">
+        <span>Main</span>
+    </label>
+
+    <div id="tab-content0" class="tab-content" style="display:block;">
+    <!-- ------------------------------------------ -->
+
+<label for="IssueIssueTypesId">Type:</label><div class="input select"><select name="data[Issue][issue_types_id]" tabindex="1" id="IssueIssueTypesId">
+<option value=""></option>
+<option value="0">Task</option>
+<option value="1">Milestone</option>
+<option value="2">Issue</option>
+<option value="3" selected="selected">Heading</option>
+<option value="4">Heading-Issue</option>
+<option value="5">Deliverable</option>
+<option value="6">Meeting</option>
+<option value="7">Risk</option>
+</select></div><label for="IssueText">Title:</label><div class="input textarea required"><textarea name="data[Issue][text]" rows="1" cols="80" id="focusme" tabindex="2" >Strategic Framework</textarea></div><label for="IssueDetails">Details:</label><div class="input textarea"><textarea name="data[Issue][details]" rows="1" cols="80" tabindex="3" id="IssueDetails" ></textarea></div><div><label for="IssueCode">Code:</label><div class="input select"><select name="data[Issue][code]" id="IssueCode">
+<option value=""> </option>
+<option value="EV-01 Strategic & Important">EV-01 Strategic &amp; Important</option>
+<option value="EV-02 Other">EV-02 Other</option>
+</select></div></div><div><label for="IssueCustom1">Classification:</label><div class="input select"><select name="data[Issue][custom1]" id="IssueCustom1">
+<option value=""> </option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select></div></div><div><label for="IssueCustom2">Report:</label><div class="input select"><select name="data[Issue][custom2]" id="IssueCustom2">
+<option value=""> </option>
+<option value="Y">Y</option>
+</select></div></div><div><label for="IssueCustom3">PM:</label><div class="input select"><select name="data[Issue][custom3]" id="IssueCustom3">
+<option value=""></option>
+<option value="agi.fuleky">Ági Füleky (B2024)</option>
+<option value="agoston.meer">Ágoston Van Der Meer (PwC 2024)</option>
+<option value="arpad.koszegi">Árpád Kőszegi (PwC 2024)</option>
+<option value="agnes.kovacs">Agnes Kovács (B2024)</option>
+<option value="alexa.mizser">Alexa Mizsér (PwC 2024)</option>
+<option value="264_alexandra.szalay">alexandra.szalay (Group)</option>
+<option value="andras.kovacs">András Kovács (B2024)</option>
+<option value="andrea.toth">Andrea Tóth (B2024)</option>
+<option value="andrew.mitchell">andrew.mitchell</option>
+<option value="andrew.mitchel">Andrew Mitchel (M-is)</option>
+<option value="anita.palm">Anita Palm (GC2018)</option>
+<option value="anna.belgya">Anna Belgya (B2024)</option>
+<option value="anna.haidekker">Anna Haidekker (B2024)</option>
+<option value="anna.losonczy">Anna Losonczy (B2024)</option>
+<option value="annamaria.molnar">Annamaria Molnar (B2024)</option>
+<option value="arda.ates">Arda Ates (EKS)</option>
+<option value="264_attila.mihok">attila.mihok (Group)</option>
+<option value="attila.mizser">Attila Mizser (B2024)</option>
+<option value="attila.tari">Attila Tari (PwC 2024)</option>
+<option value="balint.olah">Bálint Olah (PwC 2024)</option>
+<option value="balazs.furjes">Balázs  Fürjes (B2024)</option>
+<option value="balazs.ercsenyi">Balazs Ercsenyi (B2024)</option>
+<option value="balazs.nagy">Balazs Nagy (B2024)</option>
+<option value="balazs.szerdahelyi">Balazs Szerdahelyi (B2024)</option>
+<option value="balint.ivanyi">Balint Ivanyi (B2024)</option>
+<option value="beatrix.frankfurt">Beatrix Frankfurt (B2024)</option>
+<option value="bence.jankus">Bence  Jankus (PwC 2024)</option>
+<option value="benedek.timar">Benedek Timar (B2024)</option>
+<option value="264_BOM">BOM (Group)</option>
+<option value="boroka.tahi-toth">Boroka Tahi-Toth (B2024)</option>
+<option value="budapest2024">Budapest 2024 Dummy (B2024)</option>
+<option value="caio.grynberg">Caio Grynberg (EKS)</option>
+<option value="callum.reid">Callum Reid (M-is)</option>
+<option value="catherine.ordway">Catherine Ordway (EKS_c)</option>
+<option value="costas.veloudakis">Costas Veloudakis (EKS_c)</option>
+<option value="craig.mclatchey">Craig McLatchey (EKS)</option>
+<option value="264_czifra.boglarka">czifra.boglarka (Group)</option>
+<option value="daniel.nagy">Dániel Nagy (B2024)</option>
+<option value="daniel.ney">Daniel Ney (B2024)</option>
+<option value="daniel.ritterband">Daniel Ritterband (M-is)</option>
+<option value="david.patko">David Levente Patko (B2024)</option>
+<option value="david.pazmandi">David Pazmandi (B2024)</option>
+<option value="david.somogyi">David Somogyi (B2024)</option>
+<option value="debra.mclatchey">Debra McLatchey (EKS)</option>
+<option value="deepak.chauhan">Deepak Chauhan (EKS_c)</option>
+<option value="derya.sezar">Derya Sezar (EKS_c)</option>
+<option value="dinah.herford">Dinah Herford (EKS_c)</option>
+<option value="domonkos.schneller">Domonkos Schneller (B2024)</option>
+<option value="dora.sebestyen">Dora Sebestyen (B2024)</option>
+<option value="dorottya.banyai">Dorottya Bányai (PwC 2024)</option>
+<option value="elliot.green">Elliot Green (EKS)</option>
+<option value="admin">EPS Admin (EKS)</option>
+<option value="eszter.ratkai">Eszter Rátkai (B2024)</option>
+<option value="fabio.deguchi">Fabio Deguchi (EKS_c)</option>
+<option value="fanni.szajer">Fanni Szájer (B2024)</option>
+<option value="gabor.korosi">Gábor Korösi (B2024)</option>
+<option value="gabor.kovacs">Gábor Kovács (B2024)</option>
+<option value="gabor.brenner">Gabor Brenner (PwC 2024)</option>
+<option value="gabriella.grubanovits">Gabriella Grubanovits (B2024)</option>
+<option value="gergely.fodor">Gergely Fodor (B2024)</option>
+<option value="gusztav.bienerth">Gusztav Bienerth (B2024)</option>
+<option value="ioannis.minis">Ioannis Minis (EKS_c)</option>
+<option value="ivan.rozsa">Ivan Rozsa (B2024)</option>
+<option value="jamie.shaw">Jamie Shaw (EKS)</option>
+<option value="jeff.ross">jeff.ross</option>
+<option value="jill.davies">Jill Davies (EKS_c)</option>
+<option value="jim.curley">Jim Curley (M-is)</option>
+<option value="joaquin.picola">Joaquin Picola (M-is)</option>
+<option value="john.baker">John Baker (EKS_c)</option>
+<option value="john.sindelar">John Sindelar (EKS_c)</option>
+<option value="john.young">John Young (M-is)</option>
+<option value="julia.perger">Julia Perger (PwC 2024)</option>
+<option value="kira.guczogi">Kíra Guczogi (B2024)</option>
+<option value="kallai.eva">Kallai Eva (B2024)</option>
+<option value="katalin.veszely">Katalin Veszely (B2024)</option>
+<option value="kerrie.nash">Kerrie Nash (EKS)</option>
+<option value="kincso.kovacs">Kincső Kovács (PwC 2024)</option>
+<option value="kinga.egyud">Kinga Egyud (B2024)</option>
+<option value="kiss.krisztina">Kiss Krisztina (B2024)</option>
+<option value="lajos.bernath">Lajos Bernáth (B2024)</option>
+<option value="laslo.vajda">laslo.vajda</option>
+<option value="laszlo.vajda">Laszlo Vajda (B2024)</option>
+<option value="laura.kirby">Laura Kirby (M-is)</option>
+<option value="laurent.piguet">Laurent Piguet (EKS)</option>
+<option value="leanne.arnold">Leanne Arnold (M-is)</option>
+<option value="leonardo.cohen">Leonardo Cohen (EKS)</option>
+<option value="lilla.simon">Lilla Simon (B2024)</option>
+<option value="liza.stiff">Liza Stiff (EKS_c)</option>
+<option value="louise.sheffield">Louise Sheffield (M-is)</option>
+<option value="mania.kyrioglou">Mania Kyrioglou (EKS_c)</option>
+<option value="maniv.chada">Maniv Chada (M-is)</option>
+<option value="margit.stadler">Margit Stadler (B2024)</option>
+<option value="mark.chappe">Mark Chappe (EKS_c)</option>
+<option value="mark.cutler">Mark Cutler (EKS_c)</option>
+<option value="marta.schweitzer">Marta Schweitzer (B2024)</option>
+<option value="martin.benson">Martin Benson (Lagardere - SMAM)</option>
+<option value="michael.bushell">Michael Bushell (Lagardere - SMAM)</option>
+<option value="mike.hooper">Mike Hooper (EKS_c)</option>
+<option value="miklos.fekete">Miklós Fekete (B2024)</option>
+<option value="miklos.sandor">Miklos Sandor (B2024)</option>
+<option value="264_Minister">Minister (Group)</option>
+<option value="nandor.kovacs">Nándor Kovács (B2024)</option>
+<option value="nora.lazar">Nóra Lázár (B2024)</option>
+<option value="nana.neamonitou">Nana Neamonitou (EKS_c)</option>
+<option value="nassim.drissi">Nassim Drissi (EKS)</option>
+<option value="nathalie.pesenti">Nathalie Pesenti (EKS)</option>
+<option value="nick.morris">Nick Morris (EKS_c)</option>
+<option value="264_NOC">NOC (Group)</option>
+<option value="264_NPC">NPC (Group)</option>
+<option value="olav.myrholt">Olav Myrholt (EKS_c)</option>
+<option value="orban.csaba">Orban Csaba (B2024)</option>
+<option value="peter.safranka">Péter Safranka (B2024)</option>
+<option value="peter.toth">Péter Tóth (B2024)</option>
+<option value="paula.sanches">Paula Sanches (B2024)</option>
+<option value="paulin.djite">Paulin Djite (EKS_c)</option>
+<option value="peter.kaplar">Peter Kaplar (PwC 2024)</option>
+<option value="peter.szagvari">Peter Szagvari (B2024)</option>
+<option value="pranav.khot">Pranav Khot (EKS)</option>
+<option value="reka.halmai">Réka Halmai (PwC 2024)</option>
+<option value="riikka.rakic">Riikka Rakic (EKS_c)</option>
+<option value="robert.costello">robert.costello</option>
+<option value="samu.balog">Samu Marton Balogh (B2024)</option>
+<option value="sandor.fegyver">Sandor Fegyver (B2024)</option>
+<option value="sandor.finta">Sandor Finta (B2024)</option>
+<option value="steve.darling">Steve Darling (EKS)</option>
+<option value="szabolcs.kormos">Szabolcs Kormos (B2024)</option>
+<option value="tamas.locsei">Tamas Locsei (PwC 2024)</option>
+<option value="terry.wright">Terry Wright (EKS_c)</option>
+<option value="tibor.keszthelyi">Tibor Keszthelyi (B2024)</option>
+<option value="tony.holding">Tony Holding (EKS)</option>
+<option value="ute.albrecht">Ute Albrecht (B2024)</option>
+<option value="veronika.nyiri">Veronika Nyíri (B2024)</option>
+<option value="viktor.kodela">Viktor Kodela (B2024)</option>
+<option value="zhor.lahlou">Zhor Lahlou (B2024)</option>
+<option value="zoltan.katona">Zoltán Katona (PwC 2024)</option>
+<option value="zsofia.csik">Zsófia Csík  (B2024)</option>
+<option value="zsolt.hannibal">Zsolt Hannibál (PwC 2024)</option>
+<option value="zsolt.havran">Zsolt Havran (PwC 2024)</option>
+<option value="zsombor.barta">Zsombor Barta (B2024)</option>
+</select></div></div><div><label for="IssueCustom5">Extra:</label><input name="data[Issue][custom5]" type="text" tabindex="16" value="" id="IssueCustom5" /></div>    <!-- ------------------------------------------ -->
+    </div> <!-- #tab-content0 -->
 
 
-              {{#if assigned_to}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{assigned_to}}</div></div>{{/if}}
-              {{#if owned_by}}<div class="field"><div class="field_label">Owned:</div><div class="field_value">{{owned_by}}</div></div>{{/if}}
-              {{#if raised_by}}<div class="field"><div class="field_label">Assigned:</div><div class="field_value">{{raised_by}}</div></div>{{/if}}
-            </td>
-            <td>
-              {{#if custom1}}<div class="field"><div class="field_label">Custom1:</div><div class="field_value">{{custom1}}</div></div>{{/if}}
-              {{#if custom2}}<div class="field"><div class="field_label">Custom2:</div><div class="field_value">{{custom2}}</div></div>{{/if}}
-              {{#if custom3}}<div class="field"><div class="field_label">Custom3:</div><div class="field_value">{{custom3}}</div></div>{{/if}}
-              {{#if custom4}}<div class="field"><div class="field_label">Custom4:</div><div class="field_value">{{custom4}}</div></div>{{/if}}
-              {{#if custom5}}<div class="field"><div class="field_label">Custom5:</div><div class="field_value">{{custom5}}</div></div>{{/if}}
 
-            </td>
-          </tr>
-        </table>
-    </div>
-    </form>
-    {{/.}}
+
+</div>
+<div class="tabs">
+
+    <!-- Radio button and lable for #tab-content1 -->
+    <input type="radio" name="tabs" id="tab1" checked>
+    <label for="tab1">
+        <span>Status</span>
+    </label>
+
+    <!-- Radio button and lable for #tab-content2 -->
+    <input type="radio" name="tabs" id="tab2">
+    <label for="tab2">
+        <span>Dates</span>
+    </label>
+
+
+
+    <div id="tab-content1" class="tab-content">
+    <!-- ------------------------------------------ -->
+<div><label for="IssueStatusTypesId">Status:&nbsp;<div class="info" style="width:10px;">?<div style="width:250px;"><ul><li>New: just created</li><li>Open:somebody is working on it</li><li>Pending: waiting for external input</li><li>Closed: completed</li><li>Outstanding: unclear status</li></ul></div></div></label><div class="input select"><select name="data[Issue][status_types_id]" tabindex="4" id="IssueStatusTypesId">
+<option value=""></option>
+<option value="1" selected="selected">New</option>
+<option value="2">Open</option>
+<option value="3">Pending</option>
+<option value="4">Closed</option>
+<option value="5">Outstanding</option>
+</select></div></div><div><label for="IssueRating">Rating:</label><select name="data[Issue][rating]" tabindex="6" id="IssueRating">
+<option value="0" selected="selected">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>&nbsp;&nbsp;<span style="cursor:pointer;padding:2px;background-color:#CCCCCC" onclick="document.getElementsByName('data[Issue][rating]').item(0).value = '0';">0</span><span style="cursor:pointer;padding:2px;background-color:#00ff00" onclick="document.getElementsByName('data[Issue][rating]').item(0).value = '1';">1</span><span style="cursor:pointer;padding:2px;background-color:#ffcc33" onclick="document.getElementsByName('data[Issue][rating]').item(0).value = '2';">2</span><span style="cursor:pointer;padding:2px;background-color:#FF66FF" onclick="document.getElementsByName('data[Issue][rating]').item(0).value = '3';">3</span><span style="cursor:pointer;padding:2px;background-color:#EE0000" onclick="document.getElementsByName('data[Issue][rating]').item(0).value = '4';">4</span><span style="cursor:pointer;padding:2px;background-color:#BB0000" onclick="document.getElementsByName('data[Issue][rating]').item(0).value = '5';">5</span></div><div><label for="IssueProbability">Probability:</label><div class="input select"><select name="data[Issue][probability]" id="IssueProbability">
+<option value=""> </option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select></div></div><div><label for="IssueImpact">Impact:</label><div class="input select"><select name="data[Issue][impact]" id="IssueImpact">
+<option value=""> </option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select></div><div><label for="IssuePercentComplete">Percent Complete:</label><input name="data[Issue][percent_complete]" type="text" tabindex="21" style="width:40px" id="IssuePercentComplete" />% (0-100)</div>
+    <!-- ------------------------------------------ -->
+    </div> <!-- #tab-content1 -->
+</div>
+
+
+
+    <div id="tab-content2" class="tab-content">
+    <!-- ------------------------------------------ -->
+<div style="position:relative"><div class="time" style="position:absolute;left:300px;"><input name="data[Issue][time_start]" type="text" size="5" tabindex="9" id="IssueTimeStart" /><div class="time_picker" id="data[Issue][time_start]_tp"><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '06:00';toggleobj('data[Issue][time_start]_tp');">06:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '06:30';toggleobj('data[Issue][time_start]_tp');">06:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '07:00';toggleobj('data[Issue][time_start]_tp');">07:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '07:30';toggleobj('data[Issue][time_start]_tp');">07:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '08:00';toggleobj('data[Issue][time_start]_tp');">08:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '08:30';toggleobj('data[Issue][time_start]_tp');">08:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '09:00';toggleobj('data[Issue][time_start]_tp');">09:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '09:30';toggleobj('data[Issue][time_start]_tp');">09:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '10:00';toggleobj('data[Issue][time_start]_tp');">10:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '10:30';toggleobj('data[Issue][time_start]_tp');">10:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '11:00';toggleobj('data[Issue][time_start]_tp');">11:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '11:30';toggleobj('data[Issue][time_start]_tp');">11:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '12:00';toggleobj('data[Issue][time_start]_tp');">12:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '12:30';toggleobj('data[Issue][time_start]_tp');">12:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '13:00';toggleobj('data[Issue][time_start]_tp');">13:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '13:30';toggleobj('data[Issue][time_start]_tp');">13:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '14:00';toggleobj('data[Issue][time_start]_tp');">14:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '14:30';toggleobj('data[Issue][time_start]_tp');">14:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '15:00';toggleobj('data[Issue][time_start]_tp');">15:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '15:30';toggleobj('data[Issue][time_start]_tp');">15:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '16:00';toggleobj('data[Issue][time_start]_tp');">16:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '16:30';toggleobj('data[Issue][time_start]_tp');">16:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '17:00';toggleobj('data[Issue][time_start]_tp');">17:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '17:30';toggleobj('data[Issue][time_start]_tp');">17:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '18:00';toggleobj('data[Issue][time_start]_tp');">18:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '18:30';toggleobj('data[Issue][time_start]_tp');">18:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '19:00';toggleobj('data[Issue][time_start]_tp');">19:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '19:30';toggleobj('data[Issue][time_start]_tp');">19:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '20:00';toggleobj('data[Issue][time_start]_tp');">20:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '20:30';toggleobj('data[Issue][time_start]_tp');">20:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '21:00';toggleobj('data[Issue][time_start]_tp');">21:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '21:30';toggleobj('data[Issue][time_start]_tp');">21:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '22:00';toggleobj('data[Issue][time_start]_tp');">22:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '22:30';toggleobj('data[Issue][time_start]_tp');">22:30</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '23:00';toggleobj('data[Issue][time_start]_tp');">23:00</div><div onclick="document.getElementsByName('data[Issue][time_start]').item(0).value = '23:30';toggleobj('data[Issue][time_start]_tp');">23:30</div></div></div><label for="IssueDateStart">Start Date:</label>
+
+<link rel="stylesheet" type="text/css" href="/eps/css/pikaday.css" />
+<script type="text/javascript" src="/eps/js/moment.min.js"></script><script type="text/javascript" src="/eps/js/pikaday.js"></script><input name="data[Issue][date_start]" type="text" tabindex="8" id="IssueDateStart" /><script>
+  var picker = new Pikaday({ field:document.getElementById('IssueDateStart')});
+</script>
+<img src="/eps/img/date_picker.gif" style="vertical-align:top;margin-left:4px;" alt="" /></div><div style="position:relative"><div class="time" style="position:absolute;left:300px;"><input name="data[Issue][time_due]" type="text" size="5" tabindex="12" id="IssueTimeDue" /><div class="time_picker" id="data[Issue][time_due]_tp"><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '06:00';toggleobj('data[Issue][time_due]_tp');">06:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '06:30';toggleobj('data[Issue][time_due]_tp');">06:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '07:00';toggleobj('data[Issue][time_due]_tp');">07:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '07:30';toggleobj('data[Issue][time_due]_tp');">07:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '08:00';toggleobj('data[Issue][time_due]_tp');">08:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '08:30';toggleobj('data[Issue][time_due]_tp');">08:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '09:00';toggleobj('data[Issue][time_due]_tp');">09:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '09:30';toggleobj('data[Issue][time_due]_tp');">09:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '10:00';toggleobj('data[Issue][time_due]_tp');">10:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '10:30';toggleobj('data[Issue][time_due]_tp');">10:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '11:00';toggleobj('data[Issue][time_due]_tp');">11:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '11:30';toggleobj('data[Issue][time_due]_tp');">11:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '12:00';toggleobj('data[Issue][time_due]_tp');">12:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '12:30';toggleobj('data[Issue][time_due]_tp');">12:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '13:00';toggleobj('data[Issue][time_due]_tp');">13:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '13:30';toggleobj('data[Issue][time_due]_tp');">13:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '14:00';toggleobj('data[Issue][time_due]_tp');">14:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '14:30';toggleobj('data[Issue][time_due]_tp');">14:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '15:00';toggleobj('data[Issue][time_due]_tp');">15:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '15:30';toggleobj('data[Issue][time_due]_tp');">15:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '16:00';toggleobj('data[Issue][time_due]_tp');">16:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '16:30';toggleobj('data[Issue][time_due]_tp');">16:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '17:00';toggleobj('data[Issue][time_due]_tp');">17:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '17:30';toggleobj('data[Issue][time_due]_tp');">17:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '18:00';toggleobj('data[Issue][time_due]_tp');">18:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '18:30';toggleobj('data[Issue][time_due]_tp');">18:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '19:00';toggleobj('data[Issue][time_due]_tp');">19:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '19:30';toggleobj('data[Issue][time_due]_tp');">19:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '20:00';toggleobj('data[Issue][time_due]_tp');">20:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '20:30';toggleobj('data[Issue][time_due]_tp');">20:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '21:00';toggleobj('data[Issue][time_due]_tp');">21:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '21:30';toggleobj('data[Issue][time_due]_tp');">21:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '22:00';toggleobj('data[Issue][time_due]_tp');">22:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '22:30';toggleobj('data[Issue][time_due]_tp');">22:30</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '23:00';toggleobj('data[Issue][time_due]_tp');">23:00</div><div onclick="document.getElementsByName('data[Issue][time_due]').item(0).value = '23:30';toggleobj('data[Issue][time_due]_tp');">23:30</div></div></div></div><label for="IssueDateDue">Due Date:</label>
+<input name="data[Issue][date_due]" type="text" tabindex="11" id="IssueDateDue" /><script>
+  var picker = new Pikaday({ field:document.getElementById('IssueDateDue')});
+</script>
+<img src="/eps/img/date_picker.gif" style="vertical-align:top;margin-left:4px;" alt="" /><hr/><div><label for="IssueDateRaised">Date Raised:</label>
+<input name="data[Issue][date_raised]" type="text" tabindex="5" id="IssueDateRaised" /><script>
+  var picker = new Pikaday({ field:document.getElementById('IssueDateRaised')});
+</script>
+<img src="/eps/img/date_picker.gif" style="vertical-align:top;margin-left:4px;" alt="" /></div><div><label for="IssueDateCompleted">Date Completed:</label>
+<input name="data[Issue][date_completed]" type="text" tabindex="14" id="IssueDateCompleted" /><script>
+  var picker = new Pikaday({ field:document.getElementById('IssueDateCompleted')});
+</script>
+<img src="/eps/img/date_picker.gif" style="vertical-align:top;margin-left:4px;" alt="" /></div>    <!-- ------------------------------------------ -->
+    </div> <!-- #tab-content2 -->
+
+
+
+
+
+</div>
+<div class="tabs">
+    <!-- Radio button and lable for #tab-content4 -->
+<!--
+    <input type="radio" name="tabs" id="tab4">
+    <label for="tab4">
+        <span>Extended Fields</span>
+    </label>
+-->
+
+    <!-- Radio button and lable for #tab-content3 -->
+    <input type="radio" name="tabs" id="tab3">
+    <label for="tab3">
+        <span>Assignments</span>
+    </label>
+
+
+    <!-- Radio button and lable for #tab-content5 -->
+    <input type="radio" name="tabs" id="tab5">
+    <label for="tab5">
+        <span>Message</span>
+    </label>
+
+    <div id="tab-content3" class="tab-content">
+    <!-- ------------------------------------------ -->
+<div><label for="IssueAssignedTo">Responsible:</label><select name="data[Issue][assigned_to]" tabindex="13" id="IssueAssignedTo">
+<option value=""></option>
+<option value="agi.fuleky">Ági Füleky (B2024)</option>
+<option value="agoston.meer">Ágoston Van Der Meer (PwC 2024)</option>
+<option value="arpad.koszegi">Árpád Kőszegi (PwC 2024)</option>
+<option value="agnes.kovacs">Agnes Kovács (B2024)</option>
+<option value="alexa.mizser">Alexa Mizsér (PwC 2024)</option>
+<option value="264_alexandra.szalay">alexandra.szalay (Group)</option>
+<option value="andras.kovacs">András Kovács (B2024)</option>
+<option value="andrea.toth">Andrea Tóth (B2024)</option>
+<option value="andrew.mitchell">andrew.mitchell</option>
+<option value="andrew.mitchel">Andrew Mitchel (M-is)</option>
+<option value="anita.palm">Anita Palm (GC2018)</option>
+<option value="anna.belgya">Anna Belgya (B2024)</option>
+<option value="anna.haidekker">Anna Haidekker (B2024)</option>
+<option value="anna.losonczy">Anna Losonczy (B2024)</option>
+<option value="annamaria.molnar">Annamaria Molnar (B2024)</option>
+<option value="arda.ates">Arda Ates (EKS)</option>
+<option value="264_attila.mihok">attila.mihok (Group)</option>
+<option value="attila.mizser">Attila Mizser (B2024)</option>
+<option value="attila.tari">Attila Tari (PwC 2024)</option>
+<option value="balint.olah">Bálint Olah (PwC 2024)</option>
+<option value="balazs.furjes">Balázs  Fürjes (B2024)</option>
+<option value="balazs.ercsenyi">Balazs Ercsenyi (B2024)</option>
+<option value="balazs.nagy">Balazs Nagy (B2024)</option>
+<option value="balazs.szerdahelyi">Balazs Szerdahelyi (B2024)</option>
+<option value="balint.ivanyi">Balint Ivanyi (B2024)</option>
+<option value="beatrix.frankfurt">Beatrix Frankfurt (B2024)</option>
+<option value="bence.jankus">Bence  Jankus (PwC 2024)</option>
+<option value="benedek.timar">Benedek Timar (B2024)</option>
+<option value="264_BOM">BOM (Group)</option>
+<option value="boroka.tahi-toth">Boroka Tahi-Toth (B2024)</option>
+<option value="budapest2024">Budapest 2024 Dummy (B2024)</option>
+<option value="caio.grynberg">Caio Grynberg (EKS)</option>
+<option value="callum.reid">Callum Reid (M-is)</option>
+<option value="catherine.ordway">Catherine Ordway (EKS_c)</option>
+<option value="costas.veloudakis">Costas Veloudakis (EKS_c)</option>
+<option value="craig.mclatchey">Craig McLatchey (EKS)</option>
+<option value="264_czifra.boglarka">czifra.boglarka (Group)</option>
+<option value="daniel.nagy">Dániel Nagy (B2024)</option>
+<option value="daniel.ney">Daniel Ney (B2024)</option>
+<option value="daniel.ritterband">Daniel Ritterband (M-is)</option>
+<option value="david.patko">David Levente Patko (B2024)</option>
+<option value="david.pazmandi">David Pazmandi (B2024)</option>
+<option value="david.somogyi">David Somogyi (B2024)</option>
+<option value="debra.mclatchey">Debra McLatchey (EKS)</option>
+<option value="deepak.chauhan">Deepak Chauhan (EKS_c)</option>
+<option value="derya.sezar">Derya Sezar (EKS_c)</option>
+<option value="dinah.herford">Dinah Herford (EKS_c)</option>
+<option value="domonkos.schneller">Domonkos Schneller (B2024)</option>
+<option value="dora.sebestyen">Dora Sebestyen (B2024)</option>
+<option value="dorottya.banyai">Dorottya Bányai (PwC 2024)</option>
+<option value="elliot.green">Elliot Green (EKS)</option>
+<option value="admin">EPS Admin (EKS)</option>
+<option value="eszter.ratkai">Eszter Rátkai (B2024)</option>
+<option value="fabio.deguchi">Fabio Deguchi (EKS_c)</option>
+<option value="fanni.szajer">Fanni Szájer (B2024)</option>
+<option value="gabor.korosi">Gábor Korösi (B2024)</option>
+<option value="gabor.kovacs">Gábor Kovács (B2024)</option>
+<option value="gabor.brenner">Gabor Brenner (PwC 2024)</option>
+<option value="gabriella.grubanovits">Gabriella Grubanovits (B2024)</option>
+<option value="gergely.fodor">Gergely Fodor (B2024)</option>
+<option value="gusztav.bienerth">Gusztav Bienerth (B2024)</option>
+<option value="ioannis.minis">Ioannis Minis (EKS_c)</option>
+<option value="ivan.rozsa">Ivan Rozsa (B2024)</option>
+<option value="jamie.shaw">Jamie Shaw (EKS)</option>
+<option value="jeff.ross">jeff.ross</option>
+<option value="jill.davies">Jill Davies (EKS_c)</option>
+<option value="jim.curley">Jim Curley (M-is)</option>
+<option value="joaquin.picola">Joaquin Picola (M-is)</option>
+<option value="john.baker">John Baker (EKS_c)</option>
+<option value="john.sindelar">John Sindelar (EKS_c)</option>
+<option value="john.young">John Young (M-is)</option>
+<option value="julia.perger">Julia Perger (PwC 2024)</option>
+<option value="kira.guczogi">Kíra Guczogi (B2024)</option>
+<option value="kallai.eva">Kallai Eva (B2024)</option>
+<option value="katalin.veszely">Katalin Veszely (B2024)</option>
+<option value="kerrie.nash">Kerrie Nash (EKS)</option>
+<option value="kincso.kovacs">Kincső Kovács (PwC 2024)</option>
+<option value="kinga.egyud">Kinga Egyud (B2024)</option>
+<option value="kiss.krisztina">Kiss Krisztina (B2024)</option>
+<option value="lajos.bernath">Lajos Bernáth (B2024)</option>
+<option value="laslo.vajda">laslo.vajda</option>
+<option value="laszlo.vajda">Laszlo Vajda (B2024)</option>
+<option value="laura.kirby">Laura Kirby (M-is)</option>
+<option value="laurent.piguet">Laurent Piguet (EKS)</option>
+<option value="leanne.arnold">Leanne Arnold (M-is)</option>
+<option value="leonardo.cohen">Leonardo Cohen (EKS)</option>
+<option value="lilla.simon">Lilla Simon (B2024)</option>
+<option value="liza.stiff">Liza Stiff (EKS_c)</option>
+<option value="louise.sheffield">Louise Sheffield (M-is)</option>
+<option value="mania.kyrioglou">Mania Kyrioglou (EKS_c)</option>
+<option value="maniv.chada">Maniv Chada (M-is)</option>
+<option value="margit.stadler">Margit Stadler (B2024)</option>
+<option value="mark.chappe">Mark Chappe (EKS_c)</option>
+<option value="mark.cutler">Mark Cutler (EKS_c)</option>
+<option value="marta.schweitzer">Marta Schweitzer (B2024)</option>
+<option value="martin.benson">Martin Benson (Lagardere - SMAM)</option>
+<option value="michael.bushell">Michael Bushell (Lagardere - SMAM)</option>
+<option value="mike.hooper">Mike Hooper (EKS_c)</option>
+<option value="miklos.fekete">Miklós Fekete (B2024)</option>
+<option value="miklos.sandor">Miklos Sandor (B2024)</option>
+<option value="264_Minister">Minister (Group)</option>
+<option value="nandor.kovacs">Nándor Kovács (B2024)</option>
+<option value="nora.lazar">Nóra Lázár (B2024)</option>
+<option value="nana.neamonitou">Nana Neamonitou (EKS_c)</option>
+<option value="nassim.drissi">Nassim Drissi (EKS)</option>
+<option value="nathalie.pesenti">Nathalie Pesenti (EKS)</option>
+<option value="nick.morris">Nick Morris (EKS_c)</option>
+<option value="264_NOC">NOC (Group)</option>
+<option value="264_NPC">NPC (Group)</option>
+<option value="olav.myrholt">Olav Myrholt (EKS_c)</option>
+<option value="orban.csaba">Orban Csaba (B2024)</option>
+<option value="peter.safranka">Péter Safranka (B2024)</option>
+<option value="peter.toth">Péter Tóth (B2024)</option>
+<option value="paula.sanches">Paula Sanches (B2024)</option>
+<option value="paulin.djite">Paulin Djite (EKS_c)</option>
+<option value="peter.kaplar">Peter Kaplar (PwC 2024)</option>
+<option value="peter.szagvari">Peter Szagvari (B2024)</option>
+<option value="pranav.khot">Pranav Khot (EKS)</option>
+<option value="reka.halmai">Réka Halmai (PwC 2024)</option>
+<option value="riikka.rakic">Riikka Rakic (EKS_c)</option>
+<option value="robert.costello">robert.costello</option>
+<option value="samu.balog">Samu Marton Balogh (B2024)</option>
+<option value="sandor.fegyver">Sandor Fegyver (B2024)</option>
+<option value="sandor.finta">Sandor Finta (B2024)</option>
+<option value="steve.darling">Steve Darling (EKS)</option>
+<option value="szabolcs.kormos">Szabolcs Kormos (B2024)</option>
+<option value="tamas.locsei">Tamas Locsei (PwC 2024)</option>
+<option value="terry.wright">Terry Wright (EKS_c)</option>
+<option value="tibor.keszthelyi">Tibor Keszthelyi (B2024)</option>
+<option value="tony.holding">Tony Holding (EKS)</option>
+<option value="ute.albrecht">Ute Albrecht (B2024)</option>
+<option value="veronika.nyiri">Veronika Nyíri (B2024)</option>
+<option value="viktor.kodela">Viktor Kodela (B2024)</option>
+<option value="zhor.lahlou">Zhor Lahlou (B2024)</option>
+<option value="zoltan.katona">Zoltán Katona (PwC 2024)</option>
+<option value="zsofia.csik">Zsófia Csík  (B2024)</option>
+<option value="zsolt.hannibal">Zsolt Hannibál (PwC 2024)</option>
+<option value="zsolt.havran">Zsolt Havran (PwC 2024)</option>
+<option value="zsombor.barta">Zsombor Barta (B2024)</option>
+</select></div><div><label for="IssueParticipantsSupport">Support:</label><input type="hidden" name="data[Issue][participants][support]" value="" id="IssueParticipantsSupport_" />
+<select name="data[Issue][participants][support][]" multiple="multiple" tabindex="13" id="IssueParticipantsSupport">
+<option value=""></option>
+<option value="agi.fuleky">Ági Füleky (B2024)</option>
+<option value="agoston.meer">Ágoston Van Der Meer (PwC 2024)</option>
+<option value="arpad.koszegi">Árpád Kőszegi (PwC 2024)</option>
+<option value="agnes.kovacs">Agnes Kovács (B2024)</option>
+<option value="alexa.mizser">Alexa Mizsér (PwC 2024)</option>
+<option value="264_alexandra.szalay">alexandra.szalay (Group)</option>
+<option value="andras.kovacs">András Kovács (B2024)</option>
+<option value="andrea.toth">Andrea Tóth (B2024)</option>
+<option value="andrew.mitchell">andrew.mitchell</option>
+<option value="andrew.mitchel">Andrew Mitchel (M-is)</option>
+<option value="anita.palm">Anita Palm (GC2018)</option>
+<option value="anna.belgya">Anna Belgya (B2024)</option>
+<option value="anna.haidekker">Anna Haidekker (B2024)</option>
+<option value="anna.losonczy">Anna Losonczy (B2024)</option>
+<option value="annamaria.molnar">Annamaria Molnar (B2024)</option>
+<option value="arda.ates">Arda Ates (EKS)</option>
+<option value="264_attila.mihok">attila.mihok (Group)</option>
+<option value="attila.mizser">Attila Mizser (B2024)</option>
+<option value="attila.tari">Attila Tari (PwC 2024)</option>
+<option value="balint.olah">Bálint Olah (PwC 2024)</option>
+<option value="balazs.furjes">Balázs  Fürjes (B2024)</option>
+<option value="balazs.ercsenyi">Balazs Ercsenyi (B2024)</option>
+<option value="balazs.nagy">Balazs Nagy (B2024)</option>
+<option value="balazs.szerdahelyi">Balazs Szerdahelyi (B2024)</option>
+<option value="balint.ivanyi">Balint Ivanyi (B2024)</option>
+<option value="beatrix.frankfurt">Beatrix Frankfurt (B2024)</option>
+<option value="bence.jankus">Bence  Jankus (PwC 2024)</option>
+<option value="benedek.timar">Benedek Timar (B2024)</option>
+<option value="264_BOM">BOM (Group)</option>
+<option value="boroka.tahi-toth">Boroka Tahi-Toth (B2024)</option>
+<option value="budapest2024">Budapest 2024 Dummy (B2024)</option>
+<option value="caio.grynberg">Caio Grynberg (EKS)</option>
+<option value="callum.reid">Callum Reid (M-is)</option>
+<option value="catherine.ordway">Catherine Ordway (EKS_c)</option>
+<option value="costas.veloudakis">Costas Veloudakis (EKS_c)</option>
+<option value="craig.mclatchey">Craig McLatchey (EKS)</option>
+<option value="264_czifra.boglarka">czifra.boglarka (Group)</option>
+<option value="daniel.nagy">Dániel Nagy (B2024)</option>
+<option value="daniel.ney">Daniel Ney (B2024)</option>
+<option value="daniel.ritterband">Daniel Ritterband (M-is)</option>
+<option value="david.patko">David Levente Patko (B2024)</option>
+<option value="david.pazmandi">David Pazmandi (B2024)</option>
+<option value="david.somogyi">David Somogyi (B2024)</option>
+<option value="debra.mclatchey">Debra McLatchey (EKS)</option>
+<option value="deepak.chauhan">Deepak Chauhan (EKS_c)</option>
+<option value="derya.sezar">Derya Sezar (EKS_c)</option>
+<option value="dinah.herford">Dinah Herford (EKS_c)</option>
+<option value="domonkos.schneller">Domonkos Schneller (B2024)</option>
+<option value="dora.sebestyen">Dora Sebestyen (B2024)</option>
+<option value="dorottya.banyai">Dorottya Bányai (PwC 2024)</option>
+<option value="elliot.green">Elliot Green (EKS)</option>
+<option value="admin">EPS Admin (EKS)</option>
+<option value="eszter.ratkai">Eszter Rátkai (B2024)</option>
+<option value="fabio.deguchi">Fabio Deguchi (EKS_c)</option>
+<option value="fanni.szajer">Fanni Szájer (B2024)</option>
+<option value="gabor.korosi">Gábor Korösi (B2024)</option>
+<option value="gabor.kovacs">Gábor Kovács (B2024)</option>
+<option value="gabor.brenner">Gabor Brenner (PwC 2024)</option>
+<option value="gabriella.grubanovits">Gabriella Grubanovits (B2024)</option>
+<option value="gergely.fodor">Gergely Fodor (B2024)</option>
+<option value="gusztav.bienerth">Gusztav Bienerth (B2024)</option>
+<option value="ioannis.minis">Ioannis Minis (EKS_c)</option>
+<option value="ivan.rozsa">Ivan Rozsa (B2024)</option>
+<option value="jamie.shaw">Jamie Shaw (EKS)</option>
+<option value="jeff.ross">jeff.ross</option>
+<option value="jill.davies">Jill Davies (EKS_c)</option>
+<option value="jim.curley">Jim Curley (M-is)</option>
+<option value="joaquin.picola">Joaquin Picola (M-is)</option>
+<option value="john.baker">John Baker (EKS_c)</option>
+<option value="john.sindelar">John Sindelar (EKS_c)</option>
+<option value="john.young">John Young (M-is)</option>
+<option value="julia.perger">Julia Perger (PwC 2024)</option>
+<option value="kira.guczogi">Kíra Guczogi (B2024)</option>
+<option value="kallai.eva">Kallai Eva (B2024)</option>
+<option value="katalin.veszely">Katalin Veszely (B2024)</option>
+<option value="kerrie.nash">Kerrie Nash (EKS)</option>
+<option value="kincso.kovacs">Kincső Kovács (PwC 2024)</option>
+<option value="kinga.egyud">Kinga Egyud (B2024)</option>
+<option value="kiss.krisztina">Kiss Krisztina (B2024)</option>
+<option value="lajos.bernath">Lajos Bernáth (B2024)</option>
+<option value="laslo.vajda">laslo.vajda</option>
+<option value="laszlo.vajda">Laszlo Vajda (B2024)</option>
+<option value="laura.kirby">Laura Kirby (M-is)</option>
+<option value="laurent.piguet">Laurent Piguet (EKS)</option>
+<option value="leanne.arnold">Leanne Arnold (M-is)</option>
+<option value="leonardo.cohen">Leonardo Cohen (EKS)</option>
+<option value="lilla.simon">Lilla Simon (B2024)</option>
+<option value="liza.stiff">Liza Stiff (EKS_c)</option>
+<option value="louise.sheffield">Louise Sheffield (M-is)</option>
+<option value="mania.kyrioglou">Mania Kyrioglou (EKS_c)</option>
+<option value="maniv.chada">Maniv Chada (M-is)</option>
+<option value="margit.stadler">Margit Stadler (B2024)</option>
+<option value="mark.chappe">Mark Chappe (EKS_c)</option>
+<option value="mark.cutler">Mark Cutler (EKS_c)</option>
+<option value="marta.schweitzer">Marta Schweitzer (B2024)</option>
+<option value="martin.benson">Martin Benson (Lagardere - SMAM)</option>
+<option value="michael.bushell">Michael Bushell (Lagardere - SMAM)</option>
+<option value="mike.hooper">Mike Hooper (EKS_c)</option>
+<option value="miklos.fekete">Miklós Fekete (B2024)</option>
+<option value="miklos.sandor">Miklos Sandor (B2024)</option>
+<option value="264_Minister">Minister (Group)</option>
+<option value="nandor.kovacs">Nándor Kovács (B2024)</option>
+<option value="nora.lazar">Nóra Lázár (B2024)</option>
+<option value="nana.neamonitou">Nana Neamonitou (EKS_c)</option>
+<option value="nassim.drissi">Nassim Drissi (EKS)</option>
+<option value="nathalie.pesenti">Nathalie Pesenti (EKS)</option>
+<option value="nick.morris">Nick Morris (EKS_c)</option>
+<option value="264_NOC">NOC (Group)</option>
+<option value="264_NPC">NPC (Group)</option>
+<option value="olav.myrholt">Olav Myrholt (EKS_c)</option>
+<option value="orban.csaba">Orban Csaba (B2024)</option>
+<option value="peter.safranka">Péter Safranka (B2024)</option>
+<option value="peter.toth">Péter Tóth (B2024)</option>
+<option value="paula.sanches">Paula Sanches (B2024)</option>
+<option value="paulin.djite">Paulin Djite (EKS_c)</option>
+<option value="peter.kaplar">Peter Kaplar (PwC 2024)</option>
+<option value="peter.szagvari">Peter Szagvari (B2024)</option>
+<option value="pranav.khot">Pranav Khot (EKS)</option>
+<option value="reka.halmai">Réka Halmai (PwC 2024)</option>
+<option value="riikka.rakic">Riikka Rakic (EKS_c)</option>
+<option value="robert.costello">robert.costello</option>
+<option value="samu.balog">Samu Marton Balogh (B2024)</option>
+<option value="sandor.fegyver">Sandor Fegyver (B2024)</option>
+<option value="sandor.finta">Sandor Finta (B2024)</option>
+<option value="steve.darling">Steve Darling (EKS)</option>
+<option value="szabolcs.kormos">Szabolcs Kormos (B2024)</option>
+<option value="tamas.locsei">Tamas Locsei (PwC 2024)</option>
+<option value="terry.wright">Terry Wright (EKS_c)</option>
+<option value="tibor.keszthelyi">Tibor Keszthelyi (B2024)</option>
+<option value="tony.holding">Tony Holding (EKS)</option>
+<option value="ute.albrecht">Ute Albrecht (B2024)</option>
+<option value="veronika.nyiri">Veronika Nyíri (B2024)</option>
+<option value="viktor.kodela">Viktor Kodela (B2024)</option>
+<option value="zhor.lahlou">Zhor Lahlou (B2024)</option>
+<option value="zoltan.katona">Zoltán Katona (PwC 2024)</option>
+<option value="zsofia.csik">Zsófia Csík  (B2024)</option>
+<option value="zsolt.hannibal">Zsolt Hannibál (PwC 2024)</option>
+<option value="zsolt.havran">Zsolt Havran (PwC 2024)</option>
+<option value="zsombor.barta">Zsombor Barta (B2024)</option>
+</select></div><div><label for="IssueOwnedBy">Accountable:</label><select name="data[Issue][owned_by]" tabindex="10" id="IssueOwnedBy">
+<option value=""></option>
+<option value="agi.fuleky">Ági Füleky (B2024)</option>
+<option value="agoston.meer">Ágoston Van Der Meer (PwC 2024)</option>
+<option value="arpad.koszegi">Árpád Kőszegi (PwC 2024)</option>
+<option value="agnes.kovacs">Agnes Kovács (B2024)</option>
+<option value="alexa.mizser">Alexa Mizsér (PwC 2024)</option>
+<option value="264_alexandra.szalay">alexandra.szalay (Group)</option>
+<option value="andras.kovacs">András Kovács (B2024)</option>
+<option value="andrea.toth">Andrea Tóth (B2024)</option>
+<option value="andrew.mitchell">andrew.mitchell</option>
+<option value="andrew.mitchel">Andrew Mitchel (M-is)</option>
+<option value="anita.palm">Anita Palm (GC2018)</option>
+<option value="anna.belgya">Anna Belgya (B2024)</option>
+<option value="anna.haidekker">Anna Haidekker (B2024)</option>
+<option value="anna.losonczy">Anna Losonczy (B2024)</option>
+<option value="annamaria.molnar">Annamaria Molnar (B2024)</option>
+<option value="arda.ates">Arda Ates (EKS)</option>
+<option value="264_attila.mihok">attila.mihok (Group)</option>
+<option value="attila.mizser">Attila Mizser (B2024)</option>
+<option value="attila.tari">Attila Tari (PwC 2024)</option>
+<option value="balint.olah">Bálint Olah (PwC 2024)</option>
+<option value="balazs.furjes">Balázs  Fürjes (B2024)</option>
+<option value="balazs.ercsenyi">Balazs Ercsenyi (B2024)</option>
+<option value="balazs.nagy">Balazs Nagy (B2024)</option>
+<option value="balazs.szerdahelyi">Balazs Szerdahelyi (B2024)</option>
+<option value="balint.ivanyi">Balint Ivanyi (B2024)</option>
+<option value="beatrix.frankfurt">Beatrix Frankfurt (B2024)</option>
+<option value="bence.jankus">Bence  Jankus (PwC 2024)</option>
+<option value="benedek.timar">Benedek Timar (B2024)</option>
+<option value="264_BOM">BOM (Group)</option>
+<option value="boroka.tahi-toth">Boroka Tahi-Toth (B2024)</option>
+<option value="budapest2024">Budapest 2024 Dummy (B2024)</option>
+<option value="caio.grynberg">Caio Grynberg (EKS)</option>
+<option value="callum.reid">Callum Reid (M-is)</option>
+<option value="catherine.ordway">Catherine Ordway (EKS_c)</option>
+<option value="costas.veloudakis">Costas Veloudakis (EKS_c)</option>
+<option value="craig.mclatchey">Craig McLatchey (EKS)</option>
+<option value="264_czifra.boglarka">czifra.boglarka (Group)</option>
+<option value="daniel.nagy">Dániel Nagy (B2024)</option>
+<option value="daniel.ney">Daniel Ney (B2024)</option>
+<option value="daniel.ritterband">Daniel Ritterband (M-is)</option>
+<option value="david.patko">David Levente Patko (B2024)</option>
+<option value="david.pazmandi">David Pazmandi (B2024)</option>
+<option value="david.somogyi">David Somogyi (B2024)</option>
+<option value="debra.mclatchey">Debra McLatchey (EKS)</option>
+<option value="deepak.chauhan">Deepak Chauhan (EKS_c)</option>
+<option value="derya.sezar">Derya Sezar (EKS_c)</option>
+<option value="dinah.herford">Dinah Herford (EKS_c)</option>
+<option value="domonkos.schneller">Domonkos Schneller (B2024)</option>
+<option value="dora.sebestyen">Dora Sebestyen (B2024)</option>
+<option value="dorottya.banyai">Dorottya Bányai (PwC 2024)</option>
+<option value="elliot.green">Elliot Green (EKS)</option>
+<option value="admin">EPS Admin (EKS)</option>
+<option value="eszter.ratkai">Eszter Rátkai (B2024)</option>
+<option value="fabio.deguchi">Fabio Deguchi (EKS_c)</option>
+<option value="fanni.szajer">Fanni Szájer (B2024)</option>
+<option value="gabor.korosi">Gábor Korösi (B2024)</option>
+<option value="gabor.kovacs">Gábor Kovács (B2024)</option>
+<option value="gabor.brenner">Gabor Brenner (PwC 2024)</option>
+<option value="gabriella.grubanovits">Gabriella Grubanovits (B2024)</option>
+<option value="gergely.fodor">Gergely Fodor (B2024)</option>
+<option value="gusztav.bienerth">Gusztav Bienerth (B2024)</option>
+<option value="ioannis.minis">Ioannis Minis (EKS_c)</option>
+<option value="ivan.rozsa">Ivan Rozsa (B2024)</option>
+<option value="jamie.shaw">Jamie Shaw (EKS)</option>
+<option value="jeff.ross">jeff.ross</option>
+<option value="jill.davies">Jill Davies (EKS_c)</option>
+<option value="jim.curley">Jim Curley (M-is)</option>
+<option value="joaquin.picola">Joaquin Picola (M-is)</option>
+<option value="john.baker">John Baker (EKS_c)</option>
+<option value="john.sindelar">John Sindelar (EKS_c)</option>
+<option value="john.young">John Young (M-is)</option>
+<option value="julia.perger">Julia Perger (PwC 2024)</option>
+<option value="kira.guczogi">Kíra Guczogi (B2024)</option>
+<option value="kallai.eva">Kallai Eva (B2024)</option>
+<option value="katalin.veszely">Katalin Veszely (B2024)</option>
+<option value="kerrie.nash">Kerrie Nash (EKS)</option>
+<option value="kincso.kovacs">Kincső Kovács (PwC 2024)</option>
+<option value="kinga.egyud">Kinga Egyud (B2024)</option>
+<option value="kiss.krisztina">Kiss Krisztina (B2024)</option>
+<option value="lajos.bernath">Lajos Bernáth (B2024)</option>
+<option value="laslo.vajda">laslo.vajda</option>
+<option value="laszlo.vajda">Laszlo Vajda (B2024)</option>
+<option value="laura.kirby">Laura Kirby (M-is)</option>
+<option value="laurent.piguet">Laurent Piguet (EKS)</option>
+<option value="leanne.arnold">Leanne Arnold (M-is)</option>
+<option value="leonardo.cohen">Leonardo Cohen (EKS)</option>
+<option value="lilla.simon">Lilla Simon (B2024)</option>
+<option value="liza.stiff">Liza Stiff (EKS_c)</option>
+<option value="louise.sheffield">Louise Sheffield (M-is)</option>
+<option value="mania.kyrioglou">Mania Kyrioglou (EKS_c)</option>
+<option value="maniv.chada">Maniv Chada (M-is)</option>
+<option value="margit.stadler">Margit Stadler (B2024)</option>
+<option value="mark.chappe">Mark Chappe (EKS_c)</option>
+<option value="mark.cutler">Mark Cutler (EKS_c)</option>
+<option value="marta.schweitzer">Marta Schweitzer (B2024)</option>
+<option value="martin.benson">Martin Benson (Lagardere - SMAM)</option>
+<option value="michael.bushell">Michael Bushell (Lagardere - SMAM)</option>
+<option value="mike.hooper">Mike Hooper (EKS_c)</option>
+<option value="miklos.fekete">Miklós Fekete (B2024)</option>
+<option value="miklos.sandor">Miklos Sandor (B2024)</option>
+<option value="264_Minister">Minister (Group)</option>
+<option value="nandor.kovacs">Nándor Kovács (B2024)</option>
+<option value="nora.lazar">Nóra Lázár (B2024)</option>
+<option value="nana.neamonitou">Nana Neamonitou (EKS_c)</option>
+<option value="nassim.drissi">Nassim Drissi (EKS)</option>
+<option value="nathalie.pesenti">Nathalie Pesenti (EKS)</option>
+<option value="nick.morris">Nick Morris (EKS_c)</option>
+<option value="264_NOC">NOC (Group)</option>
+<option value="264_NPC">NPC (Group)</option>
+<option value="olav.myrholt">Olav Myrholt (EKS_c)</option>
+<option value="orban.csaba">Orban Csaba (B2024)</option>
+<option value="peter.safranka">Péter Safranka (B2024)</option>
+<option value="peter.toth">Péter Tóth (B2024)</option>
+<option value="paula.sanches">Paula Sanches (B2024)</option>
+<option value="paulin.djite">Paulin Djite (EKS_c)</option>
+<option value="peter.kaplar">Peter Kaplar (PwC 2024)</option>
+<option value="peter.szagvari">Peter Szagvari (B2024)</option>
+<option value="pranav.khot">Pranav Khot (EKS)</option>
+<option value="reka.halmai">Réka Halmai (PwC 2024)</option>
+<option value="riikka.rakic">Riikka Rakic (EKS_c)</option>
+<option value="robert.costello">robert.costello</option>
+<option value="samu.balog">Samu Marton Balogh (B2024)</option>
+<option value="sandor.fegyver">Sandor Fegyver (B2024)</option>
+<option value="sandor.finta">Sandor Finta (B2024)</option>
+<option value="steve.darling">Steve Darling (EKS)</option>
+<option value="szabolcs.kormos">Szabolcs Kormos (B2024)</option>
+<option value="tamas.locsei">Tamas Locsei (PwC 2024)</option>
+<option value="terry.wright">Terry Wright (EKS_c)</option>
+<option value="tibor.keszthelyi">Tibor Keszthelyi (B2024)</option>
+<option value="tony.holding">Tony Holding (EKS)</option>
+<option value="ute.albrecht">Ute Albrecht (B2024)</option>
+<option value="veronika.nyiri">Veronika Nyíri (B2024)</option>
+<option value="viktor.kodela">Viktor Kodela (B2024)</option>
+<option value="zhor.lahlou">Zhor Lahlou (B2024)</option>
+<option value="zoltan.katona">Zoltán Katona (PwC 2024)</option>
+<option value="zsofia.csik">Zsófia Csík  (B2024)</option>
+<option value="zsolt.hannibal">Zsolt Hannibál (PwC 2024)</option>
+<option value="zsolt.havran">Zsolt Havran (PwC 2024)</option>
+<option value="zsombor.barta">Zsombor Barta (B2024)</option>
+</select></div><div><label for="IssueParticipantsConsulted">Consulted:</label><input type="hidden" name="data[Issue][participants][consulted]" value="" id="IssueParticipantsConsulted_" />
+<select name="data[Issue][participants][consulted][]" multiple="multiple" tabindex="13" id="IssueParticipantsConsulted">
+<option value=""></option>
+<option value="agi.fuleky">Ági Füleky (B2024)</option>
+<option value="agoston.meer">Ágoston Van Der Meer (PwC 2024)</option>
+<option value="arpad.koszegi">Árpád Kőszegi (PwC 2024)</option>
+<option value="agnes.kovacs">Agnes Kovács (B2024)</option>
+<option value="alexa.mizser">Alexa Mizsér (PwC 2024)</option>
+<option value="264_alexandra.szalay">alexandra.szalay (Group)</option>
+<option value="andras.kovacs">András Kovács (B2024)</option>
+<option value="andrea.toth">Andrea Tóth (B2024)</option>
+<option value="andrew.mitchell">andrew.mitchell</option>
+<option value="andrew.mitchel">Andrew Mitchel (M-is)</option>
+<option value="anita.palm">Anita Palm (GC2018)</option>
+<option value="anna.belgya">Anna Belgya (B2024)</option>
+<option value="anna.haidekker">Anna Haidekker (B2024)</option>
+<option value="anna.losonczy">Anna Losonczy (B2024)</option>
+<option value="annamaria.molnar">Annamaria Molnar (B2024)</option>
+<option value="arda.ates">Arda Ates (EKS)</option>
+<option value="264_attila.mihok">attila.mihok (Group)</option>
+<option value="attila.mizser">Attila Mizser (B2024)</option>
+<option value="attila.tari">Attila Tari (PwC 2024)</option>
+<option value="balint.olah">Bálint Olah (PwC 2024)</option>
+<option value="balazs.furjes">Balázs  Fürjes (B2024)</option>
+<option value="balazs.ercsenyi">Balazs Ercsenyi (B2024)</option>
+<option value="balazs.nagy">Balazs Nagy (B2024)</option>
+<option value="balazs.szerdahelyi">Balazs Szerdahelyi (B2024)</option>
+<option value="balint.ivanyi">Balint Ivanyi (B2024)</option>
+<option value="beatrix.frankfurt">Beatrix Frankfurt (B2024)</option>
+<option value="bence.jankus">Bence  Jankus (PwC 2024)</option>
+<option value="benedek.timar">Benedek Timar (B2024)</option>
+<option value="264_BOM">BOM (Group)</option>
+<option value="boroka.tahi-toth">Boroka Tahi-Toth (B2024)</option>
+<option value="budapest2024">Budapest 2024 Dummy (B2024)</option>
+<option value="caio.grynberg">Caio Grynberg (EKS)</option>
+<option value="callum.reid">Callum Reid (M-is)</option>
+<option value="catherine.ordway">Catherine Ordway (EKS_c)</option>
+<option value="costas.veloudakis">Costas Veloudakis (EKS_c)</option>
+<option value="craig.mclatchey">Craig McLatchey (EKS)</option>
+<option value="264_czifra.boglarka">czifra.boglarka (Group)</option>
+<option value="daniel.nagy">Dániel Nagy (B2024)</option>
+<option value="daniel.ney">Daniel Ney (B2024)</option>
+<option value="daniel.ritterband">Daniel Ritterband (M-is)</option>
+<option value="david.patko">David Levente Patko (B2024)</option>
+<option value="david.pazmandi">David Pazmandi (B2024)</option>
+<option value="david.somogyi">David Somogyi (B2024)</option>
+<option value="debra.mclatchey">Debra McLatchey (EKS)</option>
+<option value="deepak.chauhan">Deepak Chauhan (EKS_c)</option>
+<option value="derya.sezar">Derya Sezar (EKS_c)</option>
+<option value="dinah.herford">Dinah Herford (EKS_c)</option>
+<option value="domonkos.schneller">Domonkos Schneller (B2024)</option>
+<option value="dora.sebestyen">Dora Sebestyen (B2024)</option>
+<option value="dorottya.banyai">Dorottya Bányai (PwC 2024)</option>
+<option value="elliot.green">Elliot Green (EKS)</option>
+<option value="admin">EPS Admin (EKS)</option>
+<option value="eszter.ratkai">Eszter Rátkai (B2024)</option>
+<option value="fabio.deguchi">Fabio Deguchi (EKS_c)</option>
+<option value="fanni.szajer">Fanni Szájer (B2024)</option>
+<option value="gabor.korosi">Gábor Korösi (B2024)</option>
+<option value="gabor.kovacs">Gábor Kovács (B2024)</option>
+<option value="gabor.brenner">Gabor Brenner (PwC 2024)</option>
+<option value="gabriella.grubanovits">Gabriella Grubanovits (B2024)</option>
+<option value="gergely.fodor">Gergely Fodor (B2024)</option>
+<option value="gusztav.bienerth">Gusztav Bienerth (B2024)</option>
+<option value="ioannis.minis">Ioannis Minis (EKS_c)</option>
+<option value="ivan.rozsa">Ivan Rozsa (B2024)</option>
+<option value="jamie.shaw">Jamie Shaw (EKS)</option>
+<option value="jeff.ross">jeff.ross</option>
+<option value="jill.davies">Jill Davies (EKS_c)</option>
+<option value="jim.curley">Jim Curley (M-is)</option>
+<option value="joaquin.picola">Joaquin Picola (M-is)</option>
+<option value="john.baker">John Baker (EKS_c)</option>
+<option value="john.sindelar">John Sindelar (EKS_c)</option>
+<option value="john.young">John Young (M-is)</option>
+<option value="julia.perger">Julia Perger (PwC 2024)</option>
+<option value="kira.guczogi">Kíra Guczogi (B2024)</option>
+<option value="kallai.eva">Kallai Eva (B2024)</option>
+<option value="katalin.veszely">Katalin Veszely (B2024)</option>
+<option value="kerrie.nash">Kerrie Nash (EKS)</option>
+<option value="kincso.kovacs">Kincső Kovács (PwC 2024)</option>
+<option value="kinga.egyud">Kinga Egyud (B2024)</option>
+<option value="kiss.krisztina">Kiss Krisztina (B2024)</option>
+<option value="lajos.bernath">Lajos Bernáth (B2024)</option>
+<option value="laslo.vajda">laslo.vajda</option>
+<option value="laszlo.vajda">Laszlo Vajda (B2024)</option>
+<option value="laura.kirby">Laura Kirby (M-is)</option>
+<option value="laurent.piguet">Laurent Piguet (EKS)</option>
+<option value="leanne.arnold">Leanne Arnold (M-is)</option>
+<option value="leonardo.cohen">Leonardo Cohen (EKS)</option>
+<option value="lilla.simon">Lilla Simon (B2024)</option>
+<option value="liza.stiff">Liza Stiff (EKS_c)</option>
+<option value="louise.sheffield">Louise Sheffield (M-is)</option>
+<option value="mania.kyrioglou">Mania Kyrioglou (EKS_c)</option>
+<option value="maniv.chada">Maniv Chada (M-is)</option>
+<option value="margit.stadler">Margit Stadler (B2024)</option>
+<option value="mark.chappe">Mark Chappe (EKS_c)</option>
+<option value="mark.cutler">Mark Cutler (EKS_c)</option>
+<option value="marta.schweitzer">Marta Schweitzer (B2024)</option>
+<option value="martin.benson">Martin Benson (Lagardere - SMAM)</option>
+<option value="michael.bushell">Michael Bushell (Lagardere - SMAM)</option>
+<option value="mike.hooper">Mike Hooper (EKS_c)</option>
+<option value="miklos.fekete">Miklós Fekete (B2024)</option>
+<option value="miklos.sandor">Miklos Sandor (B2024)</option>
+<option value="264_Minister">Minister (Group)</option>
+<option value="nandor.kovacs">Nándor Kovács (B2024)</option>
+<option value="nora.lazar">Nóra Lázár (B2024)</option>
+<option value="nana.neamonitou">Nana Neamonitou (EKS_c)</option>
+<option value="nassim.drissi">Nassim Drissi (EKS)</option>
+<option value="nathalie.pesenti">Nathalie Pesenti (EKS)</option>
+<option value="nick.morris">Nick Morris (EKS_c)</option>
+<option value="264_NOC">NOC (Group)</option>
+<option value="264_NPC">NPC (Group)</option>
+<option value="olav.myrholt">Olav Myrholt (EKS_c)</option>
+<option value="orban.csaba">Orban Csaba (B2024)</option>
+<option value="peter.safranka">Péter Safranka (B2024)</option>
+<option value="peter.toth">Péter Tóth (B2024)</option>
+<option value="paula.sanches">Paula Sanches (B2024)</option>
+<option value="paulin.djite">Paulin Djite (EKS_c)</option>
+<option value="peter.kaplar">Peter Kaplar (PwC 2024)</option>
+<option value="peter.szagvari">Peter Szagvari (B2024)</option>
+<option value="pranav.khot">Pranav Khot (EKS)</option>
+<option value="reka.halmai">Réka Halmai (PwC 2024)</option>
+<option value="riikka.rakic">Riikka Rakic (EKS_c)</option>
+<option value="robert.costello">robert.costello</option>
+<option value="samu.balog">Samu Marton Balogh (B2024)</option>
+<option value="sandor.fegyver">Sandor Fegyver (B2024)</option>
+<option value="sandor.finta">Sandor Finta (B2024)</option>
+<option value="steve.darling">Steve Darling (EKS)</option>
+<option value="szabolcs.kormos">Szabolcs Kormos (B2024)</option>
+<option value="tamas.locsei">Tamas Locsei (PwC 2024)</option>
+<option value="terry.wright">Terry Wright (EKS_c)</option>
+<option value="tibor.keszthelyi">Tibor Keszthelyi (B2024)</option>
+<option value="tony.holding">Tony Holding (EKS)</option>
+<option value="ute.albrecht">Ute Albrecht (B2024)</option>
+<option value="veronika.nyiri">Veronika Nyíri (B2024)</option>
+<option value="viktor.kodela">Viktor Kodela (B2024)</option>
+<option value="zhor.lahlou">Zhor Lahlou (B2024)</option>
+<option value="zoltan.katona">Zoltán Katona (PwC 2024)</option>
+<option value="zsofia.csik">Zsófia Csík  (B2024)</option>
+<option value="zsolt.hannibal">Zsolt Hannibál (PwC 2024)</option>
+<option value="zsolt.havran">Zsolt Havran (PwC 2024)</option>
+<option value="zsombor.barta">Zsombor Barta (B2024)</option>
+</select></div><div><label for="IssueParticipantsConsulted">Informed:</label><input type="hidden" name="data[Issue][participants][informed]" value="" id="IssueParticipantsInformed_" />
+<select name="data[Issue][participants][informed][]" multiple="multiple" tabindex="13" id="IssueParticipantsInformed">
+<option value=""></option>
+<option value="agi.fuleky">Ági Füleky (B2024)</option>
+<option value="agoston.meer">Ágoston Van Der Meer (PwC 2024)</option>
+<option value="arpad.koszegi">Árpád Kőszegi (PwC 2024)</option>
+<option value="agnes.kovacs">Agnes Kovács (B2024)</option>
+<option value="alexa.mizser">Alexa Mizsér (PwC 2024)</option>
+<option value="264_alexandra.szalay">alexandra.szalay (Group)</option>
+<option value="andras.kovacs">András Kovács (B2024)</option>
+<option value="andrea.toth">Andrea Tóth (B2024)</option>
+<option value="andrew.mitchell">andrew.mitchell</option>
+<option value="andrew.mitchel">Andrew Mitchel (M-is)</option>
+<option value="anita.palm">Anita Palm (GC2018)</option>
+<option value="anna.belgya">Anna Belgya (B2024)</option>
+<option value="anna.haidekker">Anna Haidekker (B2024)</option>
+<option value="anna.losonczy">Anna Losonczy (B2024)</option>
+<option value="annamaria.molnar">Annamaria Molnar (B2024)</option>
+<option value="arda.ates">Arda Ates (EKS)</option>
+<option value="264_attila.mihok">attila.mihok (Group)</option>
+<option value="attila.mizser">Attila Mizser (B2024)</option>
+<option value="attila.tari">Attila Tari (PwC 2024)</option>
+<option value="balint.olah">Bálint Olah (PwC 2024)</option>
+<option value="balazs.furjes">Balázs  Fürjes (B2024)</option>
+<option value="balazs.ercsenyi">Balazs Ercsenyi (B2024)</option>
+<option value="balazs.nagy">Balazs Nagy (B2024)</option>
+<option value="balazs.szerdahelyi">Balazs Szerdahelyi (B2024)</option>
+<option value="balint.ivanyi">Balint Ivanyi (B2024)</option>
+<option value="beatrix.frankfurt">Beatrix Frankfurt (B2024)</option>
+<option value="bence.jankus">Bence  Jankus (PwC 2024)</option>
+<option value="benedek.timar">Benedek Timar (B2024)</option>
+<option value="264_BOM">BOM (Group)</option>
+<option value="boroka.tahi-toth">Boroka Tahi-Toth (B2024)</option>
+<option value="budapest2024">Budapest 2024 Dummy (B2024)</option>
+<option value="caio.grynberg">Caio Grynberg (EKS)</option>
+<option value="callum.reid">Callum Reid (M-is)</option>
+<option value="catherine.ordway">Catherine Ordway (EKS_c)</option>
+<option value="costas.veloudakis">Costas Veloudakis (EKS_c)</option>
+<option value="craig.mclatchey">Craig McLatchey (EKS)</option>
+<option value="264_czifra.boglarka">czifra.boglarka (Group)</option>
+<option value="daniel.nagy">Dániel Nagy (B2024)</option>
+<option value="daniel.ney">Daniel Ney (B2024)</option>
+<option value="daniel.ritterband">Daniel Ritterband (M-is)</option>
+<option value="david.patko">David Levente Patko (B2024)</option>
+<option value="david.pazmandi">David Pazmandi (B2024)</option>
+<option value="david.somogyi">David Somogyi (B2024)</option>
+<option value="debra.mclatchey">Debra McLatchey (EKS)</option>
+<option value="deepak.chauhan">Deepak Chauhan (EKS_c)</option>
+<option value="derya.sezar">Derya Sezar (EKS_c)</option>
+<option value="dinah.herford">Dinah Herford (EKS_c)</option>
+<option value="domonkos.schneller">Domonkos Schneller (B2024)</option>
+<option value="dora.sebestyen">Dora Sebestyen (B2024)</option>
+<option value="dorottya.banyai">Dorottya Bányai (PwC 2024)</option>
+<option value="elliot.green">Elliot Green (EKS)</option>
+<option value="admin">EPS Admin (EKS)</option>
+<option value="eszter.ratkai">Eszter Rátkai (B2024)</option>
+<option value="fabio.deguchi">Fabio Deguchi (EKS_c)</option>
+<option value="fanni.szajer">Fanni Szájer (B2024)</option>
+<option value="gabor.korosi">Gábor Korösi (B2024)</option>
+<option value="gabor.kovacs">Gábor Kovács (B2024)</option>
+<option value="gabor.brenner">Gabor Brenner (PwC 2024)</option>
+<option value="gabriella.grubanovits">Gabriella Grubanovits (B2024)</option>
+<option value="gergely.fodor">Gergely Fodor (B2024)</option>
+<option value="gusztav.bienerth">Gusztav Bienerth (B2024)</option>
+<option value="ioannis.minis">Ioannis Minis (EKS_c)</option>
+<option value="ivan.rozsa">Ivan Rozsa (B2024)</option>
+<option value="jamie.shaw">Jamie Shaw (EKS)</option>
+<option value="jeff.ross">jeff.ross</option>
+<option value="jill.davies">Jill Davies (EKS_c)</option>
+<option value="jim.curley">Jim Curley (M-is)</option>
+<option value="joaquin.picola">Joaquin Picola (M-is)</option>
+<option value="john.baker">John Baker (EKS_c)</option>
+<option value="john.sindelar">John Sindelar (EKS_c)</option>
+<option value="john.young">John Young (M-is)</option>
+<option value="julia.perger">Julia Perger (PwC 2024)</option>
+<option value="kira.guczogi">Kíra Guczogi (B2024)</option>
+<option value="kallai.eva">Kallai Eva (B2024)</option>
+<option value="katalin.veszely">Katalin Veszely (B2024)</option>
+<option value="kerrie.nash">Kerrie Nash (EKS)</option>
+<option value="kincso.kovacs">Kincső Kovács (PwC 2024)</option>
+<option value="kinga.egyud">Kinga Egyud (B2024)</option>
+<option value="kiss.krisztina">Kiss Krisztina (B2024)</option>
+<option value="lajos.bernath">Lajos Bernáth (B2024)</option>
+<option value="laslo.vajda">laslo.vajda</option>
+<option value="laszlo.vajda">Laszlo Vajda (B2024)</option>
+<option value="laura.kirby">Laura Kirby (M-is)</option>
+<option value="laurent.piguet">Laurent Piguet (EKS)</option>
+<option value="leanne.arnold">Leanne Arnold (M-is)</option>
+<option value="leonardo.cohen">Leonardo Cohen (EKS)</option>
+<option value="lilla.simon">Lilla Simon (B2024)</option>
+<option value="liza.stiff">Liza Stiff (EKS_c)</option>
+<option value="louise.sheffield">Louise Sheffield (M-is)</option>
+<option value="mania.kyrioglou">Mania Kyrioglou (EKS_c)</option>
+<option value="maniv.chada">Maniv Chada (M-is)</option>
+<option value="margit.stadler">Margit Stadler (B2024)</option>
+<option value="mark.chappe">Mark Chappe (EKS_c)</option>
+<option value="mark.cutler">Mark Cutler (EKS_c)</option>
+<option value="marta.schweitzer">Marta Schweitzer (B2024)</option>
+<option value="martin.benson">Martin Benson (Lagardere - SMAM)</option>
+<option value="michael.bushell">Michael Bushell (Lagardere - SMAM)</option>
+<option value="mike.hooper">Mike Hooper (EKS_c)</option>
+<option value="miklos.fekete">Miklós Fekete (B2024)</option>
+<option value="miklos.sandor">Miklos Sandor (B2024)</option>
+<option value="264_Minister">Minister (Group)</option>
+<option value="nandor.kovacs">Nándor Kovács (B2024)</option>
+<option value="nora.lazar">Nóra Lázár (B2024)</option>
+<option value="nana.neamonitou">Nana Neamonitou (EKS_c)</option>
+<option value="nassim.drissi">Nassim Drissi (EKS)</option>
+<option value="nathalie.pesenti">Nathalie Pesenti (EKS)</option>
+<option value="nick.morris">Nick Morris (EKS_c)</option>
+<option value="264_NOC">NOC (Group)</option>
+<option value="264_NPC">NPC (Group)</option>
+<option value="olav.myrholt">Olav Myrholt (EKS_c)</option>
+<option value="orban.csaba">Orban Csaba (B2024)</option>
+<option value="peter.safranka">Péter Safranka (B2024)</option>
+<option value="peter.toth">Péter Tóth (B2024)</option>
+<option value="paula.sanches">Paula Sanches (B2024)</option>
+<option value="paulin.djite">Paulin Djite (EKS_c)</option>
+<option value="peter.kaplar">Peter Kaplar (PwC 2024)</option>
+<option value="peter.szagvari">Peter Szagvari (B2024)</option>
+<option value="pranav.khot">Pranav Khot (EKS)</option>
+<option value="reka.halmai">Réka Halmai (PwC 2024)</option>
+<option value="riikka.rakic">Riikka Rakic (EKS_c)</option>
+<option value="robert.costello">robert.costello</option>
+<option value="samu.balog">Samu Marton Balogh (B2024)</option>
+<option value="sandor.fegyver">Sandor Fegyver (B2024)</option>
+<option value="sandor.finta">Sandor Finta (B2024)</option>
+<option value="steve.darling">Steve Darling (EKS)</option>
+<option value="szabolcs.kormos">Szabolcs Kormos (B2024)</option>
+<option value="tamas.locsei">Tamas Locsei (PwC 2024)</option>
+<option value="terry.wright">Terry Wright (EKS_c)</option>
+<option value="tibor.keszthelyi">Tibor Keszthelyi (B2024)</option>
+<option value="tony.holding">Tony Holding (EKS)</option>
+<option value="ute.albrecht">Ute Albrecht (B2024)</option>
+<option value="veronika.nyiri">Veronika Nyíri (B2024)</option>
+<option value="viktor.kodela">Viktor Kodela (B2024)</option>
+<option value="zhor.lahlou">Zhor Lahlou (B2024)</option>
+<option value="zoltan.katona">Zoltán Katona (PwC 2024)</option>
+<option value="zsofia.csik">Zsófia Csík  (B2024)</option>
+<option value="zsolt.hannibal">Zsolt Hannibál (PwC 2024)</option>
+<option value="zsolt.havran">Zsolt Havran (PwC 2024)</option>
+<option value="zsombor.barta">Zsombor Barta (B2024)</option>
+</select></div><div><label for="IssueRaisedBy">Raised By:</label><select name="data[Issue][raised_by]" tabindex="7" id="IssueRaisedBy">
+<option value=""></option>
+<option value="agi.fuleky">Ági Füleky (B2024)</option>
+<option value="agoston.meer">Ágoston Van Der Meer (PwC 2024)</option>
+<option value="arpad.koszegi">Árpád Kőszegi (PwC 2024)</option>
+<option value="agnes.kovacs">Agnes Kovács (B2024)</option>
+<option value="alexa.mizser">Alexa Mizsér (PwC 2024)</option>
+<option value="264_alexandra.szalay">alexandra.szalay (Group)</option>
+<option value="andras.kovacs">András Kovács (B2024)</option>
+<option value="andrea.toth">Andrea Tóth (B2024)</option>
+<option value="andrew.mitchell">andrew.mitchell</option>
+<option value="andrew.mitchel">Andrew Mitchel (M-is)</option>
+<option value="anita.palm">Anita Palm (GC2018)</option>
+<option value="anna.belgya">Anna Belgya (B2024)</option>
+<option value="anna.haidekker">Anna Haidekker (B2024)</option>
+<option value="anna.losonczy">Anna Losonczy (B2024)</option>
+<option value="annamaria.molnar">Annamaria Molnar (B2024)</option>
+<option value="arda.ates">Arda Ates (EKS)</option>
+<option value="264_attila.mihok">attila.mihok (Group)</option>
+<option value="attila.mizser">Attila Mizser (B2024)</option>
+<option value="attila.tari">Attila Tari (PwC 2024)</option>
+<option value="balint.olah">Bálint Olah (PwC 2024)</option>
+<option value="balazs.furjes">Balázs  Fürjes (B2024)</option>
+<option value="balazs.ercsenyi">Balazs Ercsenyi (B2024)</option>
+<option value="balazs.nagy">Balazs Nagy (B2024)</option>
+<option value="balazs.szerdahelyi">Balazs Szerdahelyi (B2024)</option>
+<option value="balint.ivanyi">Balint Ivanyi (B2024)</option>
+<option value="beatrix.frankfurt">Beatrix Frankfurt (B2024)</option>
+<option value="bence.jankus">Bence  Jankus (PwC 2024)</option>
+<option value="benedek.timar">Benedek Timar (B2024)</option>
+<option value="264_BOM">BOM (Group)</option>
+<option value="boroka.tahi-toth">Boroka Tahi-Toth (B2024)</option>
+<option value="budapest2024">Budapest 2024 Dummy (B2024)</option>
+<option value="caio.grynberg">Caio Grynberg (EKS)</option>
+<option value="callum.reid">Callum Reid (M-is)</option>
+<option value="catherine.ordway">Catherine Ordway (EKS_c)</option>
+<option value="costas.veloudakis">Costas Veloudakis (EKS_c)</option>
+<option value="craig.mclatchey">Craig McLatchey (EKS)</option>
+<option value="264_czifra.boglarka">czifra.boglarka (Group)</option>
+<option value="daniel.nagy">Dániel Nagy (B2024)</option>
+<option value="daniel.ney">Daniel Ney (B2024)</option>
+<option value="daniel.ritterband">Daniel Ritterband (M-is)</option>
+<option value="david.patko">David Levente Patko (B2024)</option>
+<option value="david.pazmandi">David Pazmandi (B2024)</option>
+<option value="david.somogyi">David Somogyi (B2024)</option>
+<option value="debra.mclatchey">Debra McLatchey (EKS)</option>
+<option value="deepak.chauhan">Deepak Chauhan (EKS_c)</option>
+<option value="derya.sezar">Derya Sezar (EKS_c)</option>
+<option value="dinah.herford">Dinah Herford (EKS_c)</option>
+<option value="domonkos.schneller">Domonkos Schneller (B2024)</option>
+<option value="dora.sebestyen">Dora Sebestyen (B2024)</option>
+<option value="dorottya.banyai">Dorottya Bányai (PwC 2024)</option>
+<option value="elliot.green">Elliot Green (EKS)</option>
+<option value="admin">EPS Admin (EKS)</option>
+<option value="eszter.ratkai">Eszter Rátkai (B2024)</option>
+<option value="fabio.deguchi">Fabio Deguchi (EKS_c)</option>
+<option value="fanni.szajer">Fanni Szájer (B2024)</option>
+<option value="gabor.korosi">Gábor Korösi (B2024)</option>
+<option value="gabor.kovacs">Gábor Kovács (B2024)</option>
+<option value="gabor.brenner">Gabor Brenner (PwC 2024)</option>
+<option value="gabriella.grubanovits">Gabriella Grubanovits (B2024)</option>
+<option value="gergely.fodor">Gergely Fodor (B2024)</option>
+<option value="gusztav.bienerth">Gusztav Bienerth (B2024)</option>
+<option value="ioannis.minis">Ioannis Minis (EKS_c)</option>
+<option value="ivan.rozsa">Ivan Rozsa (B2024)</option>
+<option value="jamie.shaw">Jamie Shaw (EKS)</option>
+<option value="jeff.ross">jeff.ross</option>
+<option value="jill.davies">Jill Davies (EKS_c)</option>
+<option value="jim.curley">Jim Curley (M-is)</option>
+<option value="joaquin.picola">Joaquin Picola (M-is)</option>
+<option value="john.baker">John Baker (EKS_c)</option>
+<option value="john.sindelar">John Sindelar (EKS_c)</option>
+<option value="john.young">John Young (M-is)</option>
+<option value="julia.perger">Julia Perger (PwC 2024)</option>
+<option value="kira.guczogi">Kíra Guczogi (B2024)</option>
+<option value="kallai.eva">Kallai Eva (B2024)</option>
+<option value="katalin.veszely">Katalin Veszely (B2024)</option>
+<option value="kerrie.nash">Kerrie Nash (EKS)</option>
+<option value="kincso.kovacs">Kincső Kovács (PwC 2024)</option>
+<option value="kinga.egyud">Kinga Egyud (B2024)</option>
+<option value="kiss.krisztina">Kiss Krisztina (B2024)</option>
+<option value="lajos.bernath">Lajos Bernáth (B2024)</option>
+<option value="laslo.vajda">laslo.vajda</option>
+<option value="laszlo.vajda">Laszlo Vajda (B2024)</option>
+<option value="laura.kirby">Laura Kirby (M-is)</option>
+<option value="laurent.piguet">Laurent Piguet (EKS)</option>
+<option value="leanne.arnold">Leanne Arnold (M-is)</option>
+<option value="leonardo.cohen">Leonardo Cohen (EKS)</option>
+<option value="lilla.simon">Lilla Simon (B2024)</option>
+<option value="liza.stiff">Liza Stiff (EKS_c)</option>
+<option value="louise.sheffield">Louise Sheffield (M-is)</option>
+<option value="mania.kyrioglou">Mania Kyrioglou (EKS_c)</option>
+<option value="maniv.chada">Maniv Chada (M-is)</option>
+<option value="margit.stadler">Margit Stadler (B2024)</option>
+<option value="mark.chappe">Mark Chappe (EKS_c)</option>
+<option value="mark.cutler">Mark Cutler (EKS_c)</option>
+<option value="marta.schweitzer">Marta Schweitzer (B2024)</option>
+<option value="martin.benson">Martin Benson (Lagardere - SMAM)</option>
+<option value="michael.bushell">Michael Bushell (Lagardere - SMAM)</option>
+<option value="mike.hooper">Mike Hooper (EKS_c)</option>
+<option value="miklos.fekete">Miklós Fekete (B2024)</option>
+<option value="miklos.sandor">Miklos Sandor (B2024)</option>
+<option value="264_Minister">Minister (Group)</option>
+<option value="nandor.kovacs">Nándor Kovács (B2024)</option>
+<option value="nora.lazar">Nóra Lázár (B2024)</option>
+<option value="nana.neamonitou">Nana Neamonitou (EKS_c)</option>
+<option value="nassim.drissi">Nassim Drissi (EKS)</option>
+<option value="nathalie.pesenti">Nathalie Pesenti (EKS)</option>
+<option value="nick.morris">Nick Morris (EKS_c)</option>
+<option value="264_NOC">NOC (Group)</option>
+<option value="264_NPC">NPC (Group)</option>
+<option value="olav.myrholt">Olav Myrholt (EKS_c)</option>
+<option value="orban.csaba">Orban Csaba (B2024)</option>
+<option value="peter.safranka">Péter Safranka (B2024)</option>
+<option value="peter.toth">Péter Tóth (B2024)</option>
+<option value="paula.sanches">Paula Sanches (B2024)</option>
+<option value="paulin.djite">Paulin Djite (EKS_c)</option>
+<option value="peter.kaplar">Peter Kaplar (PwC 2024)</option>
+<option value="peter.szagvari">Peter Szagvari (B2024)</option>
+<option value="pranav.khot">Pranav Khot (EKS)</option>
+<option value="reka.halmai">Réka Halmai (PwC 2024)</option>
+<option value="riikka.rakic">Riikka Rakic (EKS_c)</option>
+<option value="robert.costello">robert.costello</option>
+<option value="samu.balog">Samu Marton Balogh (B2024)</option>
+<option value="sandor.fegyver">Sandor Fegyver (B2024)</option>
+<option value="sandor.finta">Sandor Finta (B2024)</option>
+<option value="steve.darling">Steve Darling (EKS)</option>
+<option value="szabolcs.kormos">Szabolcs Kormos (B2024)</option>
+<option value="tamas.locsei">Tamas Locsei (PwC 2024)</option>
+<option value="terry.wright">Terry Wright (EKS_c)</option>
+<option value="tibor.keszthelyi">Tibor Keszthelyi (B2024)</option>
+<option value="tony.holding">Tony Holding (EKS)</option>
+<option value="ute.albrecht">Ute Albrecht (B2024)</option>
+<option value="veronika.nyiri">Veronika Nyíri (B2024)</option>
+<option value="viktor.kodela">Viktor Kodela (B2024)</option>
+<option value="zhor.lahlou">Zhor Lahlou (B2024)</option>
+<option value="zoltan.katona">Zoltán Katona (PwC 2024)</option>
+<option value="zsofia.csik">Zsófia Csík  (B2024)</option>
+<option value="zsolt.hannibal">Zsolt Hannibál (PwC 2024)</option>
+<option value="zsolt.havran">Zsolt Havran (PwC 2024)</option>
+<option value="zsombor.barta">Zsombor Barta (B2024)</option>
+</select></div>    <!-- ------------------------------------------ -->
+    </div> <!-- #tab-content3 -->
+
+
+
+    <div id="tab-content4" class="tab-content">
+    <!-- ------------------------------------------ -->
+<table><tr><td  style="width:50%; border-right:1px solid #efefef"><div><label for="IssueViewTypesId">View Type:</label><select name="data[Issue][view_types_id]" tabindex="23" id="IssueViewTypesId">
+<option value=""></option>
+<option value="0">Task</option>
+<option value="1">Milestone</option>
+<option value="2">Issue</option>
+<option value="3">Heading</option>
+<option value="4">Heading-Issue</option>
+<option value="7">Risk</option>
+<option value="21">Issues-Simple</option>
+<option value="22">Minimal</option>
+<option value="23">LastMsg</option>
+<option value="24">TerminologyHeading</option>
+<option value="25">Start-End-Due Dates</option>
+<option value="26">Heading 2</option>
+<option value="27">LastMsgPlus</option>
+<option value="28">HeadingType</option>
+<option value="29">HeadingCodeDue</option>
+<option value="30">HeadingCodeStatus</option>
+<option value="31">CodeDueNoDetails</option>
+<option value="32">CGF_Obligations</option>
+<option value="33">CGF_Deliverables</option>
+<option value="34">K2022Calendar</option>
+<option value="35">K2022Actions</option>
+<option value="36">K2022AFIssues</option>
+<option value="37">EKSProjectCodes</option>
+<option value="38">B2024IR</option>
+<option value="39">BidProject</option>
+<option value="40">BidIssues</option>
+<option value="41">CRM</option>
+<option value="42">BidReporting</option>
+<option value="43">BidEvents</option>
+</select></div><div><label for="IssueSortOrder">Sort order:</label><div class="input text"><input name="data[Issue][sort_order]" type="text" size="4" tabindex="24" maxlength="11" value="1180" id="IssueSortOrder" /></div></div><div><label for="IssueSortChildren">Sort key<br/>(for node's children):</label><div class="input text"><input name="data[Issue][sort_children]" type="text" size="20" tabindex="25" maxlength="60" value="" id="IssueSortChildren" /></div></div></td><td><div><label for="IssueLocation">Location:</label><div class="input text"><input name="data[Issue][location]" type="text" size="30" tabindex="26" maxlength="90" value="" id="IssueLocation" /></div></div></td></tr></table>    <!-- ------------------------------------------ -->
+    </div> <!-- #tab-content5 -->
+
+    <div id="tab-content5" class="tab-content">
+    <!-- ------------------------------------------ -->
+<div><table><tr><td style="width:80px;"><div class="input select"><select name="data[IssueLog][issue_log_types_id]" id="IssueLogIssueLogTypesId">
+<option value="0" selected="selected">Message</option>
+<option value="1">Report</option>
+<option value="2">Admin</option>
+</select></div></td><td style="width:100%"><div class="input textarea"><textarea name="data[IssueLog][text]" rows="4" style="width:100%;height:100%" tabindex="22" cols="30" id="IssueLogText" ></textarea></div></td></tr></table></div>    <!-- ------------------------------------------ -->
+    </div> <!-- #tab-content5 -->
+
+
+</div>
+<!-- TABS -->
+
+<div class="submit">
+<input accesskey="s" tabindex="26" type="submit" value="Save" />&nbsp;<button type="submit" onclick="$('grid_item_edit_container').hide();return false;" tabindex="27">Cancel</button></div><input type="hidden" name="data[Issue][id]" value="91764" id="IssueId" />
+</form>
+{{/.}}
+</div>

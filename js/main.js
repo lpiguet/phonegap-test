@@ -69,7 +69,7 @@ var app = {
         if (match) {
             var pidstr = $('#pid').val();
 
-            this.store.findById(Number(match[1]), Number(pidstr), function(data) {
+            this.store.edit(Number(match[1]), Number(pidstr), function(data) {
                 self.slidePage(new EditView(data).render());
             });
         }
@@ -163,5 +163,17 @@ var app = {
     }
 };
 
+Handlebars.registerHelper("debug", function(optionalValue) {
+  console.log("Current Context");
+  console.log("====================");
+  console.log(this);
+ 
+  if (optionalValue) {
+    console.log("Value");
+    console.log("====================");
+    console.log(optionalValue);
+  }
+});
+
 $('#loading').show();
-window.setTimeout (function () { $('#loading').hide(); app.initialize(); }, 1500); // wait 2s before initializing
+window.setTimeout (function () { $('#loading').hide(); app.initialize(); }, 200); // wait 2s before initializing
